@@ -1,0 +1,27 @@
+.categoria{
+    width: 100%;
+}
+.categoria img{
+    width: 30px;
+    height: 30px;
+}
+.product{
+    background-color: var(--clr-very-light-gray);
+    border-radius: 8px;
+}
+.categoria>ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+}
+.categoria>ul>li:nth-child(2){
+    order: 1;
+}
+.categoria>ul>li:nth-child(3){
+    order: 2;
+}
+.categoria>ul>li:nth-child(1){
+    order: 3;
+}
