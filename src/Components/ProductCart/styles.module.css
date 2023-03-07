@@ -1,0 +1,13 @@
+.card__item{
+    display: flex;
+}
+
+.card__item img{
+width: 62px;
+height: 62px;
+}
+.card__itemDetails{
+    display: flex;
+    flex-direction: column;
+
+}

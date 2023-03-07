@@ -1,0 +1,20 @@
+.buttonCounter{
+    width: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;    
+    background-color: var(--clr-very-light-gray);
+    border: 1px solid black;
+}
+.buttonCounter button{
+    font-size: 18px;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    border-style: none;
+    text-align: center;
+   
+}
