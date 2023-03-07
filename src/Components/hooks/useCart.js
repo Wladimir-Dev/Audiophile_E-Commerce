@@ -4,7 +4,7 @@ import { CartContext } from '../../context/CartContext'
 export const useCart = () => {
 
     const { cart, setCart } = useContext(CartContext);
-    let auxCart;
+
 
     const addCart = (count, product) => {
 
@@ -30,6 +30,12 @@ export const useCart = () => {
     }
 
     const updateCart = (count, idProduct) => {
+        console.log(`cantidad del producto ${count}`)
+        if (count == 0) {
+            removeitem(idProduct);
+            return
+        }
+
         const indexProduct = cart.findIndex(cart => cart.product.id == idProduct);
         let copyCart = [...cart];
         copyCart[indexProduct].count = count;
@@ -44,6 +50,12 @@ export const useCart = () => {
         setCart([]);
     }
 
+    const calculateTotal = () => {
+        let initialValue = 0;
 
-    return { cart, setCart, addCart, updateCart, removeitem, removeAllItems }
+        return cart?.reduce((acumaltor, index) => acumaltor + (index.count * index.product.price), initialValue);
+    }
+
+
+    return { cart, setCart, addCart, updateCart, removeitem, removeAllItems, calculateTotal }
 }

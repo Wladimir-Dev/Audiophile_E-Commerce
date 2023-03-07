@@ -1,0 +1,8 @@
+.checkout{
+    display: flex;
+    flex-direction: column;
+}
+.checkout form{
+    display: flex;
+    flex-direction: column;
+}

@@ -23,5 +23,10 @@
 
     margin-top: 15px;
     display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+.footer__total{
+    display: flex;
     justify-content: space-between;
 }

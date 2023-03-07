@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import { CounterButton } from '../CounterButton'
 import styles from './styles.module.css'
 
 
-export const ProductCart = ({ productCart, updateCart }) => {
+export const ProductCart = ({ productCart, updateCart, removeitem }) => {
 
     const { product } = productCart;
-    const [count, setCount] = useState(productCart.count)
+    let { pathname: currentCategory } = useLocation();
 
-    useEffect(() => {
-        updateCart(count, product.id)
-    }, [count])
+    currentCategory = currentCategory.slice(1);
+
+    const operation = (operacion) => {
+
+        if (operacion == 'restar') {
+
+            updateCart(productCart.count - 1, product.id)
+
+        } else {
+
+            updateCart(productCart.count + 1, product.id)
+        }
+    }
 
     console.log("render item cart")
     return (
@@ -18,12 +29,20 @@ export const ProductCart = ({ productCart, updateCart }) => {
             <img src={product.image.mobile} alt={product.name} />
             <div className={styles.card__itemDetails}>
                 <span>{product.name}</span>
+                <span>cantidad: {productCart.count}</span>
                 <span>{`$${product.price}`}</span>
             </div>
-            <CounterButton
-                counterProduct={count}
-                setCounterProduct={setCount} 
-                fromCard={true}/>
+
+            {currentCategory != 'checkout'
+                ? <CounterButton
+                    count={productCart.count}
+                    fnAux={operation}
+                    fromCard={true}
+                />
+                : <span>{productCart.count}</span>
+
+
+            }
         </div>
     )
 }

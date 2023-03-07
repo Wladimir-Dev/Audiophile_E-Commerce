@@ -12,11 +12,19 @@ export const DetailsProduct = () => {
     let { productId } = useParams();
     const { products } = useProducts();
     const product = products.find(aux => aux.id == productId);
+    
     const [counterProduct, setCounterProduct] = useState(1)
 
     const { addCart } = useCart();
 
-   
+    const operation = (operacion) => {
+
+        if (operacion == 'restar') {
+            setCounterProduct(prev => prev - 1);
+        } else {
+            setCounterProduct(prev => prev + 1);
+        }
+    }
 
     const handleAddCart = (e) => {
 
@@ -34,8 +42,8 @@ export const DetailsProduct = () => {
             <span>{product.price}</span>
             <div className={styles.buttonContainer}>
                 <CounterButton
-                    counterProduct={counterProduct}
-                    setCounterProduct={setCounterProduct}
+                    count={counterProduct}
+                    fnAux={operation}
                 />
 
                 <button onClick={handleAddCart}>ADD TO CARD</button>

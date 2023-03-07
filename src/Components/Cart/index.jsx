@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { CounterButton } from '../CounterButton';
 import { useCart } from '../hooks/useCart'
 import { ProductCart } from '../ProductCart';
@@ -7,11 +8,14 @@ import styles from './styles.module.css'
 
 export const Cart = () => {
 
-  const { cart, updateCart, removeAllItems } = useCart();
-  const initialValue = 0;
+  const { cart, updateCart, removeitem, removeAllItems, calculateTotal } = useCart();
+  const navigate = useNavigate();
 
-  const total = cart?.reduce((acumaltor, index) => acumaltor + (index.count * index.product.price), initialValue);
+  const total = calculateTotal();
 
+  const handleClick = (e) => {
+    navigate('/checkout');
+  }
 
   return (
     <>
@@ -26,16 +30,20 @@ export const Cart = () => {
           {
             cart.map(item => (
               <ProductCart
-               productCart={item} 
-               updateCart={updateCart}
-               />
+                productCart={item}
+                updateCart={updateCart}
+                removeitem={removeitem}
+              />
             ))
 
           }
         </div>
         <div className={styles.card__footer}>
-          <span>Total</span>
-          <span>{total}</span>
+          <div className={styles.footer__total}>
+            <span>Total</span>
+            <span>{total}</span>
+          </div>
+          <button onClick={handleClick}>CheckOut</button>
         </div>
       </section>
     </>
