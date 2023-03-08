@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 
 
 
-export const Categoria = () => {
+export const ListOfCategories = () => {
 
     const { products, getCategorias } = useProducts();
 

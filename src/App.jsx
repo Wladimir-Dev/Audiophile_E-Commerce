@@ -1,12 +1,10 @@
-import { useState } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Cart } from './Components/Cart';
-import { Categoria } from './Components/Categoria';
+import { CategoryProduct } from './Components/CategoryProduct';
 import { CheckOut } from './Components/CheckOut';
 import { DetailsProduct } from './Components/DetailsProduct';
 import { Footer } from './Components/Footer';
-import { ListOfProduct } from './Components/ListOfProduct';
+import { Home } from './Components/Home';
 import { Menu } from './Components/Menu';
 import { CartProvider } from './context/CartContext';
 
@@ -20,11 +18,11 @@ function App() {
         <HashRouter>
           <Menu />
           <Routes>
-            <Route path='/' element={<Categoria />}></Route>
-            <Route path='/headphones' element={<ListOfProduct />} />
-            <Route path='/speakers' element={<ListOfProduct />} />
-            <Route path='/earphones' element={<ListOfProduct />} />
-            <Route path='/detailsProduct/:productId' element={<DetailsProduct />} />
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/headphones' element={<CategoryProduct />} />
+            <Route path='/speakers' element={<CategoryProduct />} />
+            <Route path='/earphones' element={<CategoryProduct />} />
+            <Route path='/detailsProduct/:slug' element={<DetailsProduct />} />
             <Route path='/checkout' element={<CheckOut />} />
             <Route path="*" element={<h1>no found</h1>} />
           </Routes>

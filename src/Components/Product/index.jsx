@@ -15,7 +15,7 @@ export const Product = ({ product }) => {
             </figure>
             {product.new && <span className={styles.newProduct}>new product</span>}
             <span className={styles.product__name}>{product.name}</span>
-            <p className={styles.product__description}>{product.description}</p>
+            {product.description && <p className={styles.product__description}>{product.description}</p>}
             
         </article>
     )
