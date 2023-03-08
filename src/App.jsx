@@ -5,7 +5,9 @@ import { Cart } from './Components/Cart';
 import { Categoria } from './Components/Categoria';
 import { CheckOut } from './Components/CheckOut';
 import { DetailsProduct } from './Components/DetailsProduct';
+import { Footer } from './Components/Footer';
 import { ListOfProduct } from './Components/ListOfProduct';
+import { Menu } from './Components/Menu';
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
       <CartProvider>
 
         <HashRouter>
-          <Cart />
+          <Menu />
           <Routes>
             <Route path='/' element={<Categoria />}></Route>
             <Route path='/headphones' element={<ListOfProduct />} />
@@ -26,7 +28,7 @@ function App() {
             <Route path='/checkout' element={<CheckOut />} />
             <Route path="*" element={<h1>no found</h1>} />
           </Routes>
-
+          <Footer/>
         </HashRouter>
       </CartProvider>
     </div>

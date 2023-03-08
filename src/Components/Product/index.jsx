@@ -13,9 +13,9 @@ export const Product = ({ product }) => {
             <figure>
                 <img src={product.image.mobile} alt={product.name} />
             </figure>
-            {product.new && <span>new productt</span>}
-            <span>{product.name}</span>
-            <p>{product.description}</p>
+            {product.new && <span className={styles.newProduct}>new product</span>}
+            <span className={styles.product__name}>{product.name}</span>
+            <p className={styles.product__description}>{product.description}</p>
             
         </article>
     )

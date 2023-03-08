@@ -4,7 +4,7 @@ export const CounterButton = ({ count, fnAux, fromCard = false }) => {
 
     const handleCounter = (e) => {
 
-        if (count == 1 && e.target.innerText == '-' ) {
+        if (count == 1 && e.target.innerText == '-') {
 
             if (!fromCard) {
                 return
