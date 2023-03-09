@@ -56,24 +56,36 @@ export const DetailsProduct = () => {
 
             <span className={styles.subtitle}>features</span>
             {
-                parrafos.map(cadena => (
-                    <><p>{cadena}</p><br /></>
+                parrafos.map((cadena, index) => (
+                    <><p key={index}>{cadena}</p><br /></>
                 ))
             }
 
             <span className={styles.subtitle}>IN THE BOX</span>
-            
+
             <div >
                 {
                     product.includes.map(item => (
                         <div
+                            key={item.item}
                             className={styles.box__details}
-                            key={item.item}>
+                        >
                             <span>{`${item.quantity}x`}</span>
                             <span>{item.item}</span>
                         </div>
                     ))
                 }
+            </div>
+            <div className={styles.gridContainer}>
+                <picture className={styles.item1}>
+                    <img src={product.gallery.first.mobile} alt="product image 1" />
+                </picture>
+                <picture className={styles.item2}>
+                    <img src={product.gallery.second.mobile} alt="product image 2" />
+                </picture>
+                <picture className={styles.item3}>
+                    <img src={product.gallery.third.mobile} alt="product image 3" />
+                </picture>
             </div>
             <span className={`${styles.subtitle} ${styles.suggestion}`}>you may also like</span>
             <ListOfProduct products={product.others} />

@@ -22,23 +22,23 @@ export const ProductCart = ({ productCart, updateCart, removeitem }) => {
             updateCart(productCart.count + 1, product.id)
         }
     }
-
+    const productName = product.name.split(" ");
     console.log("render item cart")
     return (
         <div className={styles.card__item}>
             <img src={product.image.mobile} alt={product.name} />
             <div className={styles.card__itemDetails}>
-                <span>{product.name}</span>
-                <span>cantidad: {productCart.count}</span>
-                <span>{`$${product.price}`}</span>
+                <span className={styles.name}>{productName[0]}</span>
+                <span className={styles.price}>{`$${product.price}.00`}</span>
             </div>
 
             {currentCategory != 'checkout'
-                ? <CounterButton
-                    count={productCart.count}
-                    fnAux={operation}
-                    fromCard={true}
-                />
+                ? 
+                    <CounterButton
+                        count={productCart.count}
+                        fnAux={operation}
+                        fromCard={true}
+                    />
                 : <span>{productCart.count}</span>
 
 

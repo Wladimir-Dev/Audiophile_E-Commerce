@@ -1,13 +1,32 @@
-.card__item{
+.card__item {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.card__item img{
-width: 62px;
-height: 62px;
+.card__item img {
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
 }
-.card__itemDetails{
+
+.card__itemDetails {
     display: flex;
     flex-direction: column;
 
+
 }
+
+.name {
+    font-weight: 700;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: 700;
+    color: hsla(0, 0%, 6%, .955);
+    opacity: .6;
+    margin-right: 18px;
+}
+

@@ -43,7 +43,7 @@ export const Cart = () => {
             <span>Total</span>
             <span>{total}</span>
           </div>
-          <button onClick={handleClick}>CheckOut</button>
+          <button className='orangeButton ' onClick={handleClick}>CheckOut</button>
         </div>
       </section>
     </>

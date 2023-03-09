@@ -12,11 +12,11 @@ export const CategoryProduct = () => {
     currentCategory = currentCategory.slice(1);
 
     const leakedProducts = products.filter(product => product.category == currentCategory);
-    console.log(["render categoryProduct"])
+    console.log("render categoryProduct")
 
     return (
         <section className={styles.categoryProduct}>
-            <h2>{currentCategory}</h2>
+           
             <ListOfProduct products={leakedProducts}/>
         </section>
     )
