@@ -28,17 +28,20 @@ export const ProductCart = ({ productCart, updateCart, removeitem }) => {
         <div className={styles.card__item}>
             <img src={product.image.mobile} alt={product.name} />
             <div className={styles.card__itemDetails}>
-                <span className={styles.name}>{productName[0]}</span>
+                <span className={styles.name}>
+                    {productName[0]}
+                    {productName[1].toUpperCase()=="MARK" && `MK ${productName[2]}`}
+                </span>
                 <span className={styles.price}>{`$${product.price}.00`}</span>
             </div>
 
             {currentCategory != 'checkout'
-                ? 
-                    <CounterButton
-                        count={productCart.count}
-                        fnAux={operation}
-                        fromCard={true}
-                    />
+                ?
+                <CounterButton
+                    count={productCart.count}
+                    fnAux={operation}
+                    fromCard={true}
+                />
                 : <span>{productCart.count}</span>
 
 

@@ -21,30 +21,38 @@ export const Cart = () => {
     <>
       <section className={styles.card}>
 
-        <div className={styles.card__header}>
-          <h5>Cart ({cart.length})</h5>
-          <button onClick={() => removeAllItems()}>Remove all</button>
-        </div>
+        {
+          total > 0
+            ?
+            <>
+              <div className={styles.card__header}>
+                <h5>Cart ({cart.length})</h5>
+                <button onClick={() => removeAllItems()}>Remove all</button>
+              </div>
 
-        <div className={styles.card__body}>
-          {
-            cart.map(item => (
-              <ProductCart
-                productCart={item}
-                updateCart={updateCart}
-                removeitem={removeitem}
-              />
-            ))
+              <div className={styles.card__body}>
+                {
+                  cart.map(item => (
+                    <ProductCart
+                      productCart={item}
+                      updateCart={updateCart}
+                      removeitem={removeitem}
+                    />
+                  ))
 
-          }
-        </div>
-        <div className={styles.card__footer}>
-          <div className={styles.footer__total}>
-            <span>Total</span>
-            <span>{total}</span>
-          </div>
-          <button className='orangeButton ' onClick={handleClick}>CheckOut</button>
-        </div>
+                }
+              </div>
+              <div className={styles.card__footer}>
+                <div className={styles.footer__total}>
+                  <span>Total</span>
+                  <span>${total}.00</span>
+                </div>
+                <button className='orangeButton ' onClick={handleClick}>CheckOut</button>
+              </div>
+            </>
+            : <h3>The Cart is Empty</h3>
+        }
+
       </section>
     </>
   )

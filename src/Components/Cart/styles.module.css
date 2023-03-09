@@ -7,9 +7,12 @@
     padding-top: 23px;
     position: absolute;
     top: 144px;
+   
 
 }
-
+.card h3{
+    text-align: center;
+}
 .card__header {
     display: flex;
     width: 100%;
@@ -51,4 +54,8 @@ font-size: 19px;
     display: flex;
     justify-content: space-between;
    
+}
+
+.footer__total span:nth-child(2){
+    font-weight: 600;
 }

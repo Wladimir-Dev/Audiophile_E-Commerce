@@ -1,8 +1,8 @@
 import React, { useId, useRef, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom';
 import { Cart } from '../Cart';
+import { CategoryBar } from '../CategoryBar';
 import { useCart } from '../hooks/useCart';
-import { useProducts } from '../hooks/useProducts';
 import { CloseIcon } from '../icons';
 import styles from './styles.module.css'
 export const Menu = () => {
@@ -11,19 +11,16 @@ export const Menu = () => {
 
     const [onBurger, setOnBurger] = useState(false);
     const { cart } = useCart();
-    const { getCategorias } = useProducts();
-    const categories = getCategorias();
-    let { pathname } = useLocation();
+
     const checkref = useRef();
     const count = cart.length;
-    pathname = pathname.slice(1);
 
-    const isCategory = categories.some(category => category.category == pathname);
-   
+
+
     const handleClickClose = () => {
         checkref.current.checked = false;
     }
-console.log("render menu")
+    console.log("render menu")
     const burgerId = useId();
     return (
         <header >
@@ -63,9 +60,7 @@ console.log("render menu")
                 </ul>
 
             </nav>
-            {isCategory &&
-                <h1 className={styles.category__title}>{pathname}</h1>
-            }
+            <CategoryBar />
         </header>
     )
 }

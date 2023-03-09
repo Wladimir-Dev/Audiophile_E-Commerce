@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink} from 'react-router-dom';
+import { DescriptionWeb } from '../DescriptionWeb';
 import { ListOfCategories } from '../ListOfCategories';
 import { Product } from '../Product';
 import styles from './styles.module.css'
@@ -28,6 +29,7 @@ export const ListOfProduct = ({products}) => {
 
             </section>
             <ListOfCategories />
+            <DescriptionWeb/>
         </>
     )
 }
