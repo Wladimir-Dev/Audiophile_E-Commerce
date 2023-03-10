@@ -67,7 +67,7 @@ export const Menu = () => {
 
                     <div className={styles.cart}>
                         <button onClick={handleClickClose}><CloseIcon /></button>
-                        <Cart />
+                        <Cart closeCart={handleClickClose}/>
                     </div>
 
                 </div>

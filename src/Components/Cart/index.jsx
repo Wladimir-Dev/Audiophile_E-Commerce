@@ -6,7 +6,7 @@ import { ProductCart } from '../ProductCart';
 
 import styles from './styles.module.css'
 
-export const Cart = () => {
+export const Cart = ({ closeCart }) => {
 
   const { cart, updateCart, removeitem, removeAllItems, calculateTotal } = useCart();
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ export const Cart = () => {
   const total = calculateTotal();
 
   const handleClick = (e) => {
+    closeCart();
     navigate('/checkout');
   }
 
