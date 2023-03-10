@@ -9,13 +9,15 @@ export const Footer = () => {
     const year = today.getFullYear();
     return (
         <footer className={styles.footer}>
-          
-            <NavLink to={`/`}>
-                <img src="./assets/shared/desktop/logo.svg" alt="icon logo" />
-            </NavLink>
-           
-                <NavigationOption/>
-          
+
+            <div className={styles.header}>
+                <NavLink to={`/`}>
+                    <img src="./assets/shared/desktop/logo.svg" alt="icon logo" />
+                </NavLink>
+
+                <NavigationOption />
+            </div>
+
             <p>Audiophile is an all in one stop to fulfill your audio needs.
                 We're a small team of music lovers and sound specialists who
                 are devoted to helping you get the most out of personal audio.

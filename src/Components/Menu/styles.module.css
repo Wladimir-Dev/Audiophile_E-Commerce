@@ -62,7 +62,7 @@ header {
 }
 .options_active {
     display: flex;
-    z-index: 1;
+    z-index: 0;
 }
 
 .cart {
@@ -80,7 +80,7 @@ header {
 .cart>button {
     position: absolute;
     top: 132px;
-    left: 280px;
+    left: 285px;
     border-style: none;
     width: 28px;
     height: 28px;
@@ -122,4 +122,9 @@ header {
     text-transform: uppercase;
     padding: 40px;
     color: white;
+}
+
+
+.burger__button~input:checked~.options {
+    display: flex;
 }

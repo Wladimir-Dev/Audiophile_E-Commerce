@@ -1,5 +1,5 @@
 import React, { useId, useRef, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Cart } from '../Cart';
 import { CategoryBar } from '../CategoryBar';
 import { useCart } from '../hooks/useCart';
@@ -8,20 +8,29 @@ import { NavigationOption } from '../NavigationOption';
 import styles from './styles.module.css'
 export const Menu = () => {
 
+
+
     const cartCheckboxId = useId();
 
-    const [onBurger, setOnBurger] = useState(false);
-    const { cart } = useCart();
 
-    const checkref = useRef();
+    const { cart } = useCart();
+   
+    const cartCheckref = useRef();
+    const optionCheckref = useRef();
     const count = cart.length;
 
 
-
     const handleClickClose = () => {
-        checkref.current.checked = false;
+        cartCheckref.current.checked = false;
+    }
+
+    const handlePrueba = () => {
+        optionCheckref.current.checked = false;
     }
     console.log("render menu")
+
+
+
     const burgerId = useId();
     return (
         <header >
@@ -29,9 +38,18 @@ export const Menu = () => {
 
                 <div className={styles.menu__items}>
 
-                    <label htmlFor={burgerId} className={styles.burger__button} onClick={() => setOnBurger(prev => !prev)}>
-                        <img src="./assets/shared/tablet/icon-hamburger.svg" alt="" />
+                    <label htmlFor={burgerId} className={styles.burger__button} >
+                        <img src="./assets/shared/tablet/icon-hamburger.svg" alt="burger icon" />
                     </label>
+
+                    <input ref={optionCheckref} type="checkbox" name="" id={burgerId} hidden />
+
+                    <section className={`${styles.options} `} onClick={handlePrueba}>
+                        <NavigationOption />
+                    </section>
+
+
+
 
                     <NavLink to={`/`}>
                         <img src="./assets/shared/desktop/logo.svg" alt="icon logo" />
@@ -45,7 +63,7 @@ export const Menu = () => {
                         }
                     </label>
 
-                    <input ref={checkref} type="checkbox" name="" id={cartCheckboxId} hidden />
+                    <input ref={cartCheckref} type="checkbox" name="" id={cartCheckboxId} hidden />
 
                     <div className={styles.cart}>
                         <button onClick={handleClickClose}><CloseIcon /></button>
@@ -53,9 +71,7 @@ export const Menu = () => {
                     </div>
 
                 </div>
-                <section className={`${styles.options} ${onBurger && styles.options_active}`}>
-                    <NavigationOption />
-                </section>
+
 
             </nav>
             <CategoryBar />
