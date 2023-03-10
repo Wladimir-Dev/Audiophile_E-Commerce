@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { DescriptionWeb } from '../DescriptionWeb'
 import { ListOfCategories } from '../ListOfCategories'
 import styles from './styles.module.css'
@@ -19,14 +20,22 @@ export const Home = () => {
               Upgrade to premium speakers that are phenomenally
               built to deliver truly remarkable sound
             </span>
-            <button className='orangeButton'>see product</button>
+            <NavLink
+              className='orangeButton'
+              to={`/detailsProduct/zx9-speaker`}>see product
+            </NavLink>
+
+            
           </div>
 
 
           <div className={styles.productHome__2}>
-            
+
             <h2>zx7 speaker</h2>
-            <button className='orangeButton'>see product</button>
+            <NavLink
+              className='orangeButton'
+              to={`/detailsProduct/zx7-speaker`}>see product
+            </NavLink>
           </div>
 
 
@@ -39,7 +48,10 @@ export const Home = () => {
 
           <div className={styles.productHome__4}>
             <h2>yx1 earphones</h2>
-            <button  className='orangeButton'>see product</button>
+            <NavLink
+              className='orangeButton'
+              to={`/detailsProduct/yx1-earphones`}>see product
+            </NavLink>
           </div>
         </section>
       </main>

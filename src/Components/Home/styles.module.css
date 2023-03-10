@@ -47,9 +47,11 @@
     font-size: 36px;
     line-height: 45px;
 }
-.productHome__1 button{
-    background-color: black;
+.productHome__1 span{
+    font-size: 15px;
+    line-height: 25px;
 }
+
 .productHome__2 {
     background-image: url('../../../public/assets/home/mobile/image-speaker-zx7.jpg');
     background-repeat: no-repeat;
@@ -69,13 +71,7 @@
     font-weight: 700;
     letter-spacing: 1px;
 }
-.productHome__2 button,
-.productHome__4 button{
-   background-color: transparent;
-   color: black;
-   border: 1px solid black;
-   
-}
+
 .productHome__3 picture img{
     border-radius: 8px;
 }
@@ -88,4 +84,22 @@
     padding-left: 20px;
     background-color: var(--clr-light-gray);
 
+}
+.productHome__1 a,
+.productHome__2 a,
+.productHome__4 a
+
+{
+    padding: 14px;
+    display: inline-block;
+}
+.productHome__1 a{
+    background-color: black;
+}
+.productHome__2 a,
+.productHome__4 a{
+   background-color: transparent;
+   color: black;
+   border: 1px solid black;
+   
 }

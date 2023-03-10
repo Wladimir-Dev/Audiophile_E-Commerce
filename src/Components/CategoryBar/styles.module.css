@@ -21,12 +21,12 @@
     background-size: cover;
     background-position: 100% 100%;
     min-height: 475px;
-padding-top: 95px;
+    padding-top: 95px;
 
 
 }
 
-.headerHome :is(span, h2, button) {
+.headerHome :is(span, h2, a) {
     text-transform: uppercase;
     margin-top: 20px;
 }
@@ -47,4 +47,9 @@ padding-top: 95px;
     opacity: .7;
     font-size: 15px;
     line-height: 25px;
+}
+
+.headerHome a {
+    display: inline-block;
+    padding: 14px;
 }

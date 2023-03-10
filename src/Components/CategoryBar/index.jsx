@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useProducts } from '../hooks/useProducts';
 import styles from './styles.module.css'
 export const CategoryBar = () => {
@@ -15,14 +15,6 @@ export const CategoryBar = () => {
         {
             category: ''
         })
-
-
-    const navHome = () => {
-        return <h2>Home</h2>
-    }
-    const navCategory = () => {
-        return <h2>{pathname}</h2>
-    }
 
     const isCategory = categories.some(category => category.category == pathname);
 
@@ -41,7 +33,11 @@ export const CategoryBar = () => {
                             and exceptional build quality made
                             for the passionate music enthusiast.
                         </p>
-                        <button className='orangeButton'>see product</button>
+                        <NavLink
+                            className='orangeButton'
+                            to={`/detailsProduct/xx99-mark-two-headphones`}>
+                            see product
+                        </NavLink>
                     </div>
                     : <h2>{pathname}</h2>
             }
