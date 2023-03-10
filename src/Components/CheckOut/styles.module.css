@@ -59,11 +59,11 @@
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
-   margin-bottom: 30px;
+    margin-bottom: 30px;
 
 }
 
-.body > div {
+.body>div {
     margin: 10px 0px;
     display: flex;
     justify-content: space-between;
@@ -71,9 +71,11 @@
     font-weight: 600;
 
 }
-.body > div span:nth-child(1){
-opacity: .7;
+
+.body>div span:nth-child(1) {
+    opacity: .7;
 }
+
 .body__itemscard button {
     display: none;
 }
@@ -82,10 +84,21 @@ opacity: .7;
     flex-grow: 1;
 }
 
-.body__itemscard> div div:nth-child(3) {
+.body__itemscard>div div:nth-child(3) {
     background-color: transparent;
+    position: relative;
 
 }
-.body>button{
+
+.body__itemscard>div div:nth-child(3)::before {
+    content: "X";
+    position: absolute;
+    left: 26px;
+    font-size: 12px;
+    top: 12px;
+    font-weight: 800;
+}
+
+.body>button {
     align-self: center;
 }

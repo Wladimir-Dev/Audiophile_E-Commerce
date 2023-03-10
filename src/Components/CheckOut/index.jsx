@@ -35,28 +35,29 @@ export const CheckOut = () => {
             <h2>checkout</h2>
             <span>billing details</span>
             <label htmlFor={nameID}>Name</label>
-            <input id={nameID} type="text" placeholder='Ana Pellizari' />
+            <input id={nameID} type="text" placeholder='Ana Pellizari' required />
+
 
             <label htmlFor={emailID}>Email</label>
-            <input id={emailID} type="email" placeholder='Ana.Pell@gmail.com' />
+            <input id={emailID} type="email" placeholder='Ana.Pell@gmail.com' required/>
 
             <label htmlFor={phoneID}>Phone</label>
-            <input id={phoneID} type="text" placeholder='Ana Pellizari' />
+            <input id={phoneID} type="text" placeholder='Ana Pellizari' required/>
           </div>
 
           <div className={styles.form__item}>
             <span>shipping info</span>
             <label htmlFor={addressID}>Your Address</label>
-            <input id={addressID} type="text" placeholder='117 Williams Avenue' />
+            <input id={addressID} type="text" placeholder='117 Williams Avenue' required/>
 
             <label htmlFor={postalCodeID}>Zip Code</label>
-            <input id={postalCodeID} type="number" placeholder='1001' />
+            <input id={postalCodeID} type="number" placeholder='1001' required/>
 
             <label htmlFor={cityID}>City</label>
-            <input id={cityID} type="text" placeholder='Chicago' />
+            <input id={cityID} type="text" placeholder='Chicago' required/>
 
             <label htmlFor={countryID}>Country</label>
-            <input id={countryID} type="text" placeholder='United States' />
+            <input id={countryID} type="text" placeholder='United States' required/>
           </div>
         </form>
 
