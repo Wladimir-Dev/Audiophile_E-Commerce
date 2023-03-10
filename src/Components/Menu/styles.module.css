@@ -57,7 +57,9 @@ header {
     transition: all .26s ease-in-out;
 
 }
-
+.options a{
+    color: black;
+}
 .options_active {
     display: flex;
     z-index: 1;

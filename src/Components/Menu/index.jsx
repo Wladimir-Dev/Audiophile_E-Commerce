@@ -4,6 +4,7 @@ import { Cart } from '../Cart';
 import { CategoryBar } from '../CategoryBar';
 import { useCart } from '../hooks/useCart';
 import { CloseIcon } from '../icons';
+import { NavigationOption } from '../NavigationOption';
 import styles from './styles.module.css'
 export const Menu = () => {
 
@@ -52,12 +53,9 @@ export const Menu = () => {
                     </div>
 
                 </div>
-                <ul className={`${styles.options} ${onBurger && styles.options_active}`}>
-                    <li>HOME</li>
-                    <li>HEADPHONES</li>
-                    <li>SPEAKERS</li>
-                    <li>EARPHONESF</li>
-                </ul>
+                <section className={`${styles.options} ${onBurger && styles.options_active}`}>
+                    <NavigationOption />
+                </section>
 
             </nav>
             <CategoryBar />

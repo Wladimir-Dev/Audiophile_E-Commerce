@@ -1,0 +1,13 @@
+.navigationOption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    list-style: none;
+
+}
+
+.navigationOption a {
+    text-decoration: none;
+}

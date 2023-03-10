@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { NavigationOption } from '../NavigationOption';
 
 import styles from './styles.module.css'
 
@@ -8,17 +9,13 @@ export const Footer = () => {
     const year = today.getFullYear();
     return (
         <footer className={styles.footer}>
-            <section className={styles.container__navigation}>
-                <NavLink to={`/`}>
-                    <img src="./assets/shared/desktop/logo.svg" alt="icon logo" />
-                </NavLink>
-                <ul>
-                    <li><NavLink to={'/'}>HOME</NavLink></li>
-                    <li><NavLink to={'/headphones'} >HEADPHONES</NavLink></li>
-                    <li><NavLink to={'/speakers'}>SPEAKERS</NavLink></li>
-                    <li><NavLink to={'/earphones'}>EARPHONES</NavLink></li>
-                </ul>
-            </section>
+          
+            <NavLink to={`/`}>
+                <img src="./assets/shared/desktop/logo.svg" alt="icon logo" />
+            </NavLink>
+           
+                <NavigationOption/>
+          
             <p>Audiophile is an all in one stop to fulfill your audio needs.
                 We're a small team of music lovers and sound specialists who
                 are devoted to helping you get the most out of personal audio.
@@ -35,7 +32,7 @@ export const Footer = () => {
                 <a href='https://github.com/Wladimir-Dev?tab=repositories' target={'_blank'}>
                     <img src="./assets/shared/desktop/icon-instagram.svg" alt="" />
                 </a>
-                
+
 
             </div>
         </footer>
