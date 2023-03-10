@@ -25,8 +25,7 @@
 .price {
     font-size: 14px;
     font-weight: 700;
-    color: hsla(0, 0%, 6%, .955);
-    opacity: .6;
+    color: hsl(0deg 0% 45.88%);
     margin-right: 18px;
 }
 
