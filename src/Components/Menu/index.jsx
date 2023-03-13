@@ -24,7 +24,7 @@ export const Menu = () => {
         cartCheckref.current.checked = false;
     }
 
-    const handlePrueba = () => {
+    const handleCloseBurger = () => {
         optionCheckref.current.checked = false;
     }
     console.log("render menu")
@@ -39,13 +39,16 @@ export const Menu = () => {
                 <div className={styles.menu__items}>
 
                     <label htmlFor={burgerId} className={styles.burger__button} >
-                        <img src="./assets/shared/tablet/icon-hamburger.svg" alt="burger icon" />
+                        {/* <img src="./assets/shared/tablet/icon-hamburger.svg" alt="burger icon" /> */}
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </label>
 
                     <input ref={optionCheckref} type="checkbox" name="" id={burgerId} hidden />
 
-                    <section className={`${styles.options} `} onClick={handlePrueba}>
-                        <NavigationOption />
+                    <section className={`${styles.options} `} >
+                        <NavigationOption handleCloseBurger={handleCloseBurger} />
                     </section>
 
 

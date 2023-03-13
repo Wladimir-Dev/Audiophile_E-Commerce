@@ -124,6 +124,16 @@ header {
     color: white;
 }
 
+.burger__button span{
+    background-color: white;
+    width: 22px;
+    height: 3px;
+    display: block;
+    margin-bottom: 5px;
+}
+.burger__button:focus span{
+    background-color: red;
+}
 
 .burger__button~input:checked~.options {
     display: flex;

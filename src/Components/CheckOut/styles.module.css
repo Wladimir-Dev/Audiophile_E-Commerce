@@ -25,7 +25,7 @@
     row-gap: 10px;
     background-color: white;
     border-radius: 8px;
-    padding: 30px 12px 35px;
+    padding: 30px 16px 35px;
 }
 
 .form span {
@@ -40,7 +40,16 @@
 .form label {
     font-size: 12px;
     font-weight: 800;
+    position: relative;
+}
 
+.form label::before {
+    content: "*";
+    color: red;
+    font-size: 18px;
+    top: -2px;
+    left: -8px;
+    position: absolute;
 }
 
 .form input {
@@ -51,6 +60,8 @@
     margin-bottom: 20px;
     font-size: 16px;
 }
+
+
 
 .body {
     background-color: white;
@@ -101,4 +112,12 @@
 
 .body>button {
     align-self: center;
+}
+
+small {
+    display: none;
+}
+
+.form__item>input:invalid~small {
+    display: inline;
 }

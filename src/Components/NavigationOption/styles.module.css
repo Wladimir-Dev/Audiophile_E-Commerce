@@ -5,9 +5,15 @@
     align-items: center;
     row-gap: 10px;
     list-style: none;
+    width: 100%;
 
 }
-
+.navigationOption a,
+.navigationOption li{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
 .navigationOption a {
     text-decoration: none;
 }
