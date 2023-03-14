@@ -41,8 +41,8 @@ export const CheckOut = () => {
         showError(arrayInputs[index], "NoVisible");
       }
     }
-    
-   
+
+
     setPay(prev => !prev)
 
 
@@ -139,11 +139,13 @@ export const CheckOut = () => {
               <span>grand total</span>
               <span>${grandTotal.toFixed(2)}</span>
             </div>
+
             <button
               type='submit'
               name='wakanda'
               className='orangeButton'
               autoFocus
+              disabled={total == 0}
             >
               continue and pay
             </button>
@@ -152,7 +154,7 @@ export const CheckOut = () => {
       </section>
       {
         pay &&
-        <Order total={grandTotal.toFixed(2)}/>
+        <Order total={grandTotal.toFixed(2)} />
       }
     </main>
   )
