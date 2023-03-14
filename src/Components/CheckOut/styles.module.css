@@ -25,10 +25,10 @@
     row-gap: 10px;
     background-color: white;
     border-radius: 8px;
-    padding: 30px 16px 35px;
+    padding: 30px 20px 35px;
 }
 
-.form span {
+.form legend {
     color: var(--clr-orange);
     text-transform: uppercase;
     font-size: 13px;
@@ -37,13 +37,15 @@
     margin-bottom: 15px;
 }
 
-.form label {
+.labelInput {
+    display: inline-block;
     font-size: 12px;
     font-weight: 800;
     position: relative;
+    margin-bottom: 8px;
 }
 
-.form label::before {
+.labelInput::before {
     content: "*";
     color: red;
     font-size: 18px;
@@ -57,7 +59,6 @@
     border-style: none;
     border: 1px solid #f2f2f2;
     padding: 18px;
-    margin-bottom: 20px;
     font-size: 16px;
 }
 
@@ -86,7 +87,10 @@
 .body>div span:nth-child(1) {
     opacity: .7;
 }
-
+.body__itemscard{
+    flex-direction: column;
+    row-gap: 5px;
+}
 .body__itemscard button {
     display: none;
 }
@@ -120,4 +124,21 @@ small {
 
 .form__item>input:invalid~small {
     display: inline;
+}
+
+input:valid+label {
+    display: none;
+}
+
+.error {
+    color: red;
+    display: inline;
+    text-transform: capitalize;
+}
+fieldset{
+    border-style: none;
+    margin-bottom: 20px;
+}
+.noVisible{
+    display: none;
 }

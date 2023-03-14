@@ -1,74 +1,112 @@
-import React, { useId } from 'react'
+import React, { useId, useRef, useState } from 'react'
 import { useCart } from '../hooks/useCart';
+import { Order } from '../Order';
 import { ProductCart } from '../ProductCart';
 import styles from './styles.module.css'
 export const CheckOut = () => {
 
-  const nameID = useId();
-  const emailID = useId();
-  const phoneID = useId();
-  const addressID = useId();
-  const postalCodeID = useId();
-  const cityID = useId();
-  const countryID = useId();
-  const { cart, calculateTotal } = useCart();
 
+  const { cart, calculateTotal } = useCart();
+  const [pay, setPay] = useState(false)
 
   const total = calculateTotal();
   const SHIPPING = 50;
   const vat = total * 0.2;
   const grandTotal = total + SHIPPING + vat;
-  const handleSubmit = (e) => {
-
-    e.preventDefault();
-    const fields = Object.fromEntries(new window.FormData(e.target));
-    console.log(fields.nameID)
+  let labelInput = undefined;
 
 
-    const auxinput = document.getElementById(nameID);
-    if (auxinput.validity.valid) {
-      console.log("no cumple")
-    }
+  const showError = (input, accion) => {
+    labelInput = document.querySelector("#" + input.id + " + small");
+    labelInput.className = accion;
+
+
   }
 
 
+  const handleSubmit = (e) => {
+    const arrayInputs = document.querySelectorAll('input:not([type="checkbox"])');
+    e.preventDefault();
+
+    for (let index = 0; index < arrayInputs.length; index++) {
+
+
+      if (!arrayInputs[index].validity.valid) {
+
+        showError(arrayInputs[index], "error");
+        arrayInputs[index].focus();
+        return
+      }
+      else {
+        showError(arrayInputs[index], "NoVisible");
+      }
+    }
+    
+   
+    setPay(prev => !prev)
+
+
+  }
+
+  console.log("reeeender")
 
   return (
     <main className={styles.main}>
-      <section className={styles.checkout}>
+      <section id='checkout' className={`${pay && styles.noVisible} ${styles.checkout} `}>
 
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit} className={styles.form} noValidate>
 
           <div className={styles.form__item}>
             <h2>checkout</h2>
 
             <fieldset>
               <legend>billing details</legend>
-              <label htmlFor={nameID}>Name</label>
-              <abbr title="Este campo es obligatorio" aria-label="required">*</abbr>
-              <input name="nameID" id={nameID} type="text" placeholder='Ana Pellizari' required minLength="3" maxLength="10" />
+              <label htmlFor="nameID" className={styles.labelInput}>Name</label>
+              <input name="nameID" id="nameID" type="text" placeholder='Ana Pellizari' required />
+              <small htmlFor="nameID" hidden>se requiere un nombre válido </small>
             </fieldset>
 
-            {/*  <label htmlFor={emailID}>Email</label>
-            <input id={emailID} type="email" placeholder='Ana.Pell@gmail.com' required />
+            {/*  <fieldset>
+              <label htmlFor="emailID" className={styles.labelInput}>Email</label>
+              <input name='emailID' id="emailID" type="email" placeholder='Ana.Pell@gmail.com' required />
+              <small htmlFor="nameID" hidden>se requiere un email valido</small>
+            </fieldset>
 
-            <label htmlFor={phoneID}>Phone</label>
-            <input id={phoneID} type="text" placeholder='Ana Pellizari' required />
-        
- */}  </div>
+            <fieldset>
+              <label htmlFor="phoneID" className={styles.labelInput}>Phone</label>
+              <input id="phoneID" type="text" placeholder='Ana Pellizari' required />
+              <small htmlFor="phoneID" hidden>Ingrese un número de teléfono válido</small>
+            </fieldset> */}
+
+          </div>
           <div className={styles.form__item}>
-            {/*  <span>shipping info</span>
-            <label htmlFor={addressID}>Your Address</label>
-            <input id={addressID} type="text" placeholder='117 Williams Avenue' required />
+            {/*  <fieldset>
+              <legend>shipping info</legend>
+              <label htmlFor="addressID" className={styles.labelInput}>Your Address</label>
+              <input id="addressID" type="text" placeholder='117 Williams Avenue' required />
+              <small htmlFor="addressID" hidden>Ingrese una dirección válida</small>
+            </fieldset>
 
-            <label htmlFor={postalCodeID}>Zip Code</label>
-            <input id={postalCodeID} type="number" placeholder='1001' required />
+            <fieldset>
+              <label htmlFor="postalCodeID" className={styles.labelInput}>Zip Code</label>
+              <input id="postalCodeID" type="number" placeholder='1001' required />
+              <small htmlFor="postalCodeID" hidden>Ingrese una código postal válido</small>
+            </fieldset>
 
-            <label htmlFor={cityID}>City</label>
-            <input id={cityID} type="text" placeholder='Chicago' required />
 
-            <label htmlFor={countryID}>Country</label>
-            <input id={countryID} type="text" placeholder='United States' required /> */}
+            <fieldset>
+              <label htmlFor="cityID" className={styles.labelInput}>City</label>
+              <input id="cityID" type="text" placeholder='Chicago' required />
+              <small htmlFor="cityID" hidden>Ingrese una ciudad válida</small>
+
+            </fieldset>
+
+            <fieldset>
+              <label htmlFor="countryID" className={styles.labelInput}>Country</label>
+              <input id="countryID" type="text" placeholder='United States' required />
+              <small htmlFor="countryID" hidden>Ingrese una país válido</small>
+
+            </fieldset> */}
           </div>
 
 
@@ -105,12 +143,17 @@ export const CheckOut = () => {
               type='submit'
               name='wakanda'
               className='orangeButton'
+              autoFocus
             >
               continue and pay
             </button>
           </div>
         </form>
       </section>
+      {
+        pay &&
+        <Order total={grandTotal.toFixed(2)}/>
+      }
     </main>
   )
 }

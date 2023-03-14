@@ -28,9 +28,9 @@ export const CounterButton = ({ count, fnAux, fromCard = false }) => {
 
     return (
         <div className={`${styles.buttonCounter} ${fromCard && styles.fromCard}`}>
-            <button onClick={handleCounter} >-</button>
+            <button type='button' onClick={handleCounter} >-</button>
             <span>{count}</span>
-            <button onClick={handleCounter} >+</button>
+            <button type='button' onClick={handleCounter} >+</button>
         </div>
     )
 }

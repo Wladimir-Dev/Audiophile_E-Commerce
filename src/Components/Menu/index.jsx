@@ -39,7 +39,6 @@ export const Menu = () => {
                 <div className={styles.menu__items}>
 
                     <label htmlFor={burgerId} className={styles.burger__button} >
-                        {/* <img src="./assets/shared/tablet/icon-hamburger.svg" alt="burger icon" /> */}
                         <span></span>
                         <span></span>
                         <span></span>

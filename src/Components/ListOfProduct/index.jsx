@@ -9,7 +9,6 @@ export const ListOfProduct = ({ products }) => {
 
 
     console.log("render list of product")
-    window.scrollTo(0, 0);
 
     return (
         <>

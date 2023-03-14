@@ -17,9 +17,11 @@
   box-sizing: border-box;
   font-family: 'Manrope', sans-serif;
 }
-body{
+
+body {
   height: 100vh;
 }
+
 .orangeButton {
   text-decoration: none;
   background-color: var(--clr-orange);
@@ -30,4 +32,14 @@ body{
   font-size: 14px;
   text-align: center;
   border-style: none;
+}
+
+.error {
+  color: red;
+  display: inline;
+  text-transform: capitalize;
+}
+
+.NoVisible {
+  display: none;
 }

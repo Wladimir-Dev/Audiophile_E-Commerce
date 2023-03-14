@@ -1,4 +1,5 @@
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import { CategoryProduct } from './Components/CategoryProduct';
 import { CheckOut } from './Components/CheckOut';
@@ -10,6 +11,15 @@ import { CartProvider } from './context/CartContext';
 
 function App() {
 
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
   console.log("render app")
   return (
     <div className="App">
@@ -17,6 +27,7 @@ function App() {
 
         <HashRouter>
           <Menu />
+          <ScrollToTop />
           <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/headphones' element={<CategoryProduct />} />
@@ -26,7 +37,7 @@ function App() {
             <Route path='/checkout' element={<CheckOut />} />
             <Route path="*" element={<h1>no found</h1>} />
           </Routes>
-          <Footer/>
+          <Footer />
         </HashRouter>
       </CartProvider>
     </div>

@@ -133,6 +133,7 @@ header {
 }
 .burger__button:focus span{
     background-color: red;
+    display: inline;
 }
 
 .burger__button~input:checked~.options {

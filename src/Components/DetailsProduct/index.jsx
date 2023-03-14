@@ -39,7 +39,6 @@ export const DetailsProduct = () => {
     }
 
     console.log("render DetailsProduct")
-    window.scrollTo(0, 0);
 
     return (
         <section className={styles.detailsProduct}>

@@ -14,7 +14,6 @@ export const ListOfCategories = () => {
     const categorias = getCategorias();
 
     console.log("render catgeoria")
-    window.scrollTo(0, 0);
 
 
     return (
