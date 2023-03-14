@@ -24,7 +24,7 @@ export const CategoryBar = () => {
     return (
         <div className={styles.categoryBar}>
             {
-                pathname == ''
+                pathname == '' //home
                     ?
                     <div className={styles.headerHome}>
                         <span>new product</span>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import { useProducts } from '../hooks/useProducts'
+import { useProducts } from '../../Components/hooks/useProducts';
+
 
 import styles from './styles.module.css'
 

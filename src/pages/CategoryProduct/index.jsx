@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import { useProducts } from '../hooks/useProducts';
-import {ListOfProduct} from '../ListOfProduct'
+import { useProducts } from '../../Components/hooks/useProducts';
+import { ListOfProduct } from '../../container/ListOfProduct';
 import styles from './styles.module.css'
 export const CategoryProduct = () => {
 

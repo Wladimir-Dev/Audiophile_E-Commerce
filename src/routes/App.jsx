@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
-import './App.css';
-import { CategoryProduct } from './Components/CategoryProduct';
-import { CheckOut } from './Components/CheckOut';
-import { DetailsProduct } from './Components/DetailsProduct';
-import { Footer } from './Components/Footer';
-import { Home } from './Components/Home';
-import { Menu } from './Components/Menu';
-import { CartProvider } from './context/CartContext';
+import '../App.css';
+import { CheckOut } from '../Components/CheckOut';
+import { DetailsProduct } from '../container/DetailsProduct';
+import { Footer } from '../Components/Footer';
+import { Home } from '../pages/Home';
+import { Menu } from '../Components/Menu';
+import { CartProvider } from '../context/CartContext';
+import { CategoryProduct } from '../pages/CategoryProduct';
 
 function App() {
 

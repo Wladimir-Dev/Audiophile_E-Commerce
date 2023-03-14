@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom';
-import { CounterButton } from '../CounterButton';
-import { useCart } from '../hooks/useCart';
-import { useProducts } from '../hooks/useProducts';
+import { CounterButton } from '../../Components/CounterButton';
+import { useCart } from '../../Components/hooks/useCart';
+import { useProducts } from '../../Components/hooks/useProducts';
 import { ListOfProduct } from '../ListOfProduct';
-import { Product } from '../Product';
+import { Product } from '../../Components/Product';
 import styles from './styles.module.css'
 
 

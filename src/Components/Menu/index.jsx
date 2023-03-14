@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Cart } from '../Cart';
 import { CategoryBar } from '../CategoryBar';
 import { useCart } from '../hooks/useCart';
-import { CloseIcon } from '../icons';
+import { CloseIcon } from '../Icons';
 import { NavigationOption } from '../NavigationOption';
 import styles from './styles.module.css'
 export const Menu = () => {

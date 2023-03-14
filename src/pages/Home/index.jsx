@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { DescriptionWeb } from '../DescriptionWeb'
-import { ListOfCategories } from '../ListOfCategories'
+import { DescriptionWeb } from '../../Components/DescriptionWeb'
+import { ListOfCategories } from '../../container/ListOfCategories'
 import styles from './styles.module.css'
 export const Home = () => {
   return (
