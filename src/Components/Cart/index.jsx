@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { CounterButton } from '../CounterButton';
 import { useCart } from '../hooks/useCart'
+import { CloseIcon } from '../Icons';
 import { ProductCart } from '../ProductCart';
 
 import styles from './styles.module.css'
@@ -16,6 +17,9 @@ export const Cart = ({ closeCart }) => {
   const handleClick = (e) => {
     closeCart();
     navigate('/checkout');
+  }
+  const handleClose = () => {
+    closeCart();
   }
 
   return (
@@ -54,6 +58,7 @@ export const Cart = ({ closeCart }) => {
             : <h3>The Cart is Empty</h3>
         }
 
+        <button className={styles.closeButton} onClick={handleClose}><CloseIcon /></button>
       </section>
     </>
   )

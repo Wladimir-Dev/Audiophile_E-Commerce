@@ -68,7 +68,7 @@ export const Menu = () => {
                     <input ref={cartCheckref} type="checkbox" name="" id={cartCheckboxId} hidden />
 
                     <div className={styles.cart}>
-                        <button onClick={handleClickClose}><CloseIcon /></button>
+                        
                         <Cart closeCart={handleClickClose}/>
                     </div>
 

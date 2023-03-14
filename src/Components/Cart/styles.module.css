@@ -10,6 +10,18 @@
    
 
 }
+.closeButton {
+    position: absolute;
+    top: -11px;
+    left: 263px;
+    border-style: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 1.5px;
+    z-index: 1;
+}
 .card h3{
     text-align: center;
 }
