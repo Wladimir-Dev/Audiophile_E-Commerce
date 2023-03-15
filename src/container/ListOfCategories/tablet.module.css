@@ -1,0 +1,8 @@
+@media only screen and (min-width:768px) {
+
+    
+    .categoria>ul {
+        flex-direction: row;
+        column-gap: 10px;
+    }
+}

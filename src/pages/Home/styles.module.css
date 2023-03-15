@@ -74,6 +74,7 @@
 
 .productHome__3 picture img{
     border-radius: 8px;
+    height: 100%;
 }
 .productHome__4{
     display: flex;

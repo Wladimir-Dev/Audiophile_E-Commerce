@@ -22,8 +22,6 @@
     background-position: 100% 100%;
     min-height: 475px;
     padding-top: 95px;
-
-
 }
 
 .headerHome :is(span, h2, a) {

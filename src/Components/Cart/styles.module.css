@@ -21,6 +21,7 @@
     text-align: center;
     padding-top: 1.5px;
     z-index: 1;
+    cursor: pointer;
 }
 .card h3{
     text-align: center;

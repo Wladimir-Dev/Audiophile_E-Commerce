@@ -4,7 +4,7 @@ import { useProducts } from '../../Components/hooks/useProducts';
 
 
 import styles from './styles.module.css'
-
+import tablet from './tablet.module.css'
 
 
 export const ListOfCategories = () => {
@@ -19,8 +19,8 @@ export const ListOfCategories = () => {
 
     return (
         <>
-            <section className={`${styles.categoria}`}>
-                <ul>
+            <section className={`${styles.categoria} ${tablet.categoria}`}>
+                <ul >
                     {
                         categorias.map(categoria => (
                             <li
