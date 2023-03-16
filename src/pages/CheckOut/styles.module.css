@@ -1,6 +1,7 @@
 .main {
     background-color: var(--clr-light-gray);
-    padding-top: 40px;
+    padding: 40px 0px;
+   
 }
 
 .checkout {
@@ -83,7 +84,9 @@
     font-weight: 600;
 
 }
-
+.body>button{
+    width: 100%;
+}
 .body>div span:nth-child(1) {
     opacity: .7;
 }

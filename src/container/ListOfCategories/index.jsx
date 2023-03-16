@@ -5,6 +5,7 @@ import { useProducts } from '../../Components/hooks/useProducts';
 
 import styles from './styles.module.css'
 import tablet from './tablet.module.css'
+import desktop from './desktop.module.css'
 
 
 export const ListOfCategories = () => {
@@ -19,13 +20,11 @@ export const ListOfCategories = () => {
 
     return (
         <>
-            <section className={`${styles.categoria} ${tablet.categoria}`}>
+            <section className={`${styles.categoria} ${tablet.categoria} ${desktop.categoria}`}>
                 <ul >
                     {
                         categorias.map(categoria => (
-                            <li
-                                key={categoria.category}
-                                className={styles.product}>
+                            <li key={categoria.category} className={`${styles.product} ${desktop.product}`}>
                                 <figure>
                                     <img src={categoria.categoryImage.mobile} alt="categoria imagen" />
                                 </figure>

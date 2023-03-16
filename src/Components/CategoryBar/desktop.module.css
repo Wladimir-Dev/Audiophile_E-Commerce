@@ -1,0 +1,23 @@
+@media only screen and (min-width:1024px) {
+   
+   .categoryBar{
+    width: 75%;
+    margin: 0 auto;
+   }
+   
+    .headerHome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: start;
+        padding: 0;
+        padding-right: 60%;
+        background-size: contain;
+        min-height: 600px;
+      
+    }
+    .headerHome p{
+        padding: 0;
+        width: 70%;
+    }
+}

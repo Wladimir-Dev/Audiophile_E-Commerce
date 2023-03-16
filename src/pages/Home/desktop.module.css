@@ -1,0 +1,26 @@
+@media only screen and (min-width:1024px) {
+   
+   
+   .home{
+    width: 75%;
+   }
+   .productsHome{
+    row-gap: 40px;
+   }
+    .productHome__1 {
+        flex-direction: row;
+        padding: 40px 40px 0px;
+    }
+
+    .productHome__1 picture {
+        width: 60%;
+    }
+    .productHome__1 img{
+        width: 400px;
+    }
+    .productHome__2 {
+     
+        background-image: url('../../../public/assets/home/desktop/image-speaker-zx7.jpg');
+        min-height: 320px
+    }
+}

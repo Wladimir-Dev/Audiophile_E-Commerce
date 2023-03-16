@@ -1,8 +1,13 @@
 import React, { useId, useRef, useState } from 'react'
-import { useCart } from '../hooks/useCart';
-import { Order } from '../Order';
-import { ProductCart } from '../ProductCart';
+import { useCart } from '../../Components/hooks/useCart';
+import { Order } from '../../Components/Order';
+import { ProductCart } from '../../Components/ProductCart';
+
+
 import styles from './styles.module.css'
+import tablet from './tablet.module.css'
+
+
 export const CheckOut = () => {
 
 
@@ -44,7 +49,7 @@ export const CheckOut = () => {
 
 
     setPay(prev => !prev)
-
+    window.scrollTo(0, 0);
 
   }
 
@@ -113,7 +118,7 @@ export const CheckOut = () => {
           <div className={styles.body}>
 
             <h3>summary</h3>
-            <div className={styles.body__itemscard}>
+            <div className={`${styles.body__itemscard} ${tablet.body__itemscard}`}>
               {
                 cart.map(item => (
                   <ProductCart
@@ -137,7 +142,7 @@ export const CheckOut = () => {
             </div>
             <div>
               <span>grand total</span>
-              <span>${grandTotal.toFixed(2)}</span>
+              <span><strong>${grandTotal.toFixed(2)}</strong></span>
             </div>
 
             <button

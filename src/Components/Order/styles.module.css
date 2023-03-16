@@ -69,7 +69,6 @@ margin-top: 5px;
 }
 .bodyItems{
     display: flex;
-   
     row-gap: 5px;
 }
 .bodyItems button {

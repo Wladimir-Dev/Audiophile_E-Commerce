@@ -1,0 +1,33 @@
+@media only screen and (min-width:768px) {
+   
+    .order{
+        padding: 48px;
+        margin-bottom: 20px;
+    }
+   
+    .body {
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+        width: 100%;
+    }
+
+    .body img {
+        width: 103px;
+        height: 103px;
+    }
+
+    .bodyItems {
+        width: 50%;
+        border-radius: 0px;
+        margin-top: 0;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    .footer {
+        width: 50%;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}

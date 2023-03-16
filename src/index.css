@@ -17,7 +17,9 @@
   box-sizing: border-box;
   font-family: 'Manrope', sans-serif;
 }
-
+*, :after, :before {
+  box-sizing: border-box;
+}
 body {
   height: 100vh;
 }
@@ -43,3 +45,8 @@ body {
 .NoVisible {
   display: none;
 }
+img{
+  max-width: 100%;
+  height: auto;
+}
+

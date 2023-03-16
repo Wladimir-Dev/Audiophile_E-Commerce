@@ -1,0 +1,25 @@
+@media only screen and (min-width:1024px) {
+    .menu{
+        width: 75%;
+        padding-bottom: 25px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .menu::after {
+        width: 100%;
+        left: 0px;
+      
+    }
+    .navLeft{
+        display: none;
+    }
+    .optionsNavigation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .optionsNavigation a{
+        color: white;
+    }
+}

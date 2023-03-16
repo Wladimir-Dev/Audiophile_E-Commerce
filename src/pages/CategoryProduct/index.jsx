@@ -1,6 +1,8 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
+import { DescriptionWeb } from '../../Components/DescriptionWeb';
 import { useProducts } from '../../Components/hooks/useProducts';
+import { ListOfCategories } from '../../container/ListOfCategories';
 import { ListOfProduct } from '../../container/ListOfProduct';
 import styles from './styles.module.css'
 export const CategoryProduct = () => {
@@ -18,6 +20,8 @@ export const CategoryProduct = () => {
         <section className={styles.categoryProduct}>
            
             <ListOfProduct products={leakedProducts}/>
+            <ListOfCategories />
+            <DescriptionWeb />
         </section>
     )
 }

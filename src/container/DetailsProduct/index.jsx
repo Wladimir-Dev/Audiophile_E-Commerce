@@ -6,7 +6,7 @@ import { useProducts } from '../../Components/hooks/useProducts';
 import { ListOfProduct } from '../ListOfProduct';
 import { Product } from '../../Components/Product';
 import styles from './styles.module.css'
-
+import tablet from './tablet.module.css'
 
 export const DetailsProduct = () => {
 
@@ -15,43 +15,20 @@ export const DetailsProduct = () => {
 
     const product = products.find(aux => aux.slug == slug);
 
-    const [counterProduct, setCounterProduct] = useState(1)
 
     const parrafos = product.features.split('\n\n');
 
 
-    const { addCart } = useCart();
-
-    const operation = (operacion) => {
-
-        if (operacion == 'restar') {
-            setCounterProduct(prev => prev - 1);
-        } else {
-            setCounterProduct(prev => prev + 1);
-        }
-    }
-
-    const handleAddCart = (e) => {
-
-        addCart(counterProduct, product);
-        setCounterProduct(1);
-
-    }
-
     console.log("render DetailsProduct")
 
     return (
-        <section className={styles.detailsProduct}>
-            <Product product={product} />
-            <strong>{`$ ${product.price}.00`}</strong>
+        <section className={`${styles.detailsProduct} ${tablet.detailsProduct}`}>
 
-            <div className={styles.buttonContainer}>
-                <CounterButton
-                    count={counterProduct}
-                    fnAux={operation}
-                />
-                <button className={`orangeButton`} onClick={handleAddCart}>ADD TO CARD</button>
-            </div>
+            <Product
+                product={product}
+            />
+
+
 
             <span className={styles.subtitle}>features</span>
             {
@@ -75,18 +52,25 @@ export const DetailsProduct = () => {
                     ))
                 }
             </div>
-            <div className={styles.gridContainer}>
+            <div className={`${styles.gridContainer} ${tablet.gridContainer}`}>
                 <picture className={styles.item1}>
+                    <source media="(min-width:1024px )" srcset={product.gallery.first.desktop} />
+                    <source media="(min-width:768px )" srcset={product.gallery.first.tablet} />
                     <img src={product.gallery.first.mobile} alt="product image 1" />
                 </picture>
                 <picture className={styles.item2}>
+                    <source media="(min-width:1024px )" srcset={product.gallery.second.desktop} />
+                    <source media="(min-width:768px )" srcset={product.gallery.second.tablet} />
                     <img src={product.gallery.second.mobile} alt="product image 2" />
                 </picture>
                 <picture className={styles.item3}>
+                    <source media="(min-width:1024px )" srcset={product.gallery.third.desktop} />
+                    <source media="(min-width:768px )" srcset={product.gallery.third.tablet} />
                     <img src={product.gallery.third.mobile} alt="product image 3" />
                 </picture>
             </div>
             <span className={`${styles.subtitle} ${styles.suggestion}`}>you may also like</span>
+
             <ListOfProduct products={product.others} />
 
         </section>

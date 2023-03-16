@@ -1,0 +1,7 @@
+@media only screen and (min-width:768px) {
+ 
+    .body__itemscard img{
+        width: 123px;
+        height: 123px;
+    }
+}

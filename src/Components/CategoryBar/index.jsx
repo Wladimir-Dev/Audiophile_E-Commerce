@@ -1,8 +1,13 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom';
 import { useProducts } from '../hooks/useProducts';
+
+
+
 import styles from './styles.module.css'
 import tablet from './tablet.module.css'
+import desktop from './desktop.module.css'
+
 export const CategoryBar = () => {
 
     const { getCategorias } = useProducts();
@@ -23,11 +28,11 @@ export const CategoryBar = () => {
 
 
     return (
-        <div className={`${styles.categoryBar} ${tablet.categoryBar}`}>
+        <div className={`${styles.categoryBar} ${tablet.categoryBar} ${desktop.categoryBar}`}>
             {
                 pathname == '' //home
                     ?
-                    <div className={`${styles.headerHome} ${tablet.headerHome}`}>
+                    <div className={`${styles.headerHome} ${tablet.headerHome}  ${desktop.headerHome}`}>
                         <span>new product</span>
                         <h2>xx99 mark ii headphones</h2>
                         <p>Experience natural, lifelike audio

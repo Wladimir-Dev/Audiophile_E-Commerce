@@ -29,8 +29,7 @@ export const ListOfProduct = ({ products }) => {
                 }
 
             </section>
-            <ListOfCategories />
-            <DescriptionWeb />
+           
         </>
     )
 }

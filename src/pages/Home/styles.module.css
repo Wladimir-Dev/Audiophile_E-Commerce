@@ -1,6 +1,7 @@
 .home {
     width: 85%;
     margin: 0 auto;
+    
 }
 
 .productsHome {
@@ -38,6 +39,13 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center top;
+}
+.productHome__1__rigth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
 }
 
 .productHome__1 img {
@@ -79,11 +87,12 @@
 .productHome__4{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     row-gap: 20px;
     padding: 35px;
     padding-left: 20px;
     background-color: var(--clr-light-gray);
+    text-align: center;
 
 }
 .productHome__1 a,
