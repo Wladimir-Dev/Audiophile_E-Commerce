@@ -8,10 +8,11 @@ import { ImageProduct } from '../ImageProduct'
 
 import styles from './styles.module.css'
 import tablet from './tablet.module.css'
+import desktop from './desktop.module.css'
 
 
 
-export const Product = ({ product }) => {
+export const Product = ({ product, girar = false }) => {
 
     const { getCategorias } = useProducts();
     const categories = getCategorias();
@@ -39,40 +40,43 @@ export const Product = ({ product }) => {
 
     }
     console.log("render product")
+    console.log("girar= "+girar)
 
     return (
-        <article className={`${styles.product} ${tablet.product}`} key={product.id}>
-            <div>
+        <article
+            className={`${styles.product} ${tablet.product} ${product.price && desktop.product}`} key={product.id}>
+            <div className={((girar && isCategory)||(product.price && !isCategory)) ? desktop.girar :undefined}>
                 {
                     isCategory
                         ? <ImageCategoryProduct product={product} />
                         : <ImageProduct product={product} />
                 }
             </div>
-            <div className={`${styles.container__description} ${tablet.container__description}`}>
+            <div
+                className={`${styles.container__description} ${desktop.container__description} ${!product.price && `${styles.centerItems} ${desktop.centerItems}`}`}>
                 {
                     product.new &&
                     <span className={styles.newProduct}>new product</span>
                 }
                 <span
                     className={
-                        `${styles.product__name}  
+                        `${styles.product__name}
                     ${tablet.product__name} 
                     ${(product.price && !isCategory) && tablet.textDetail}
-                    ${(product.price ) && tablet.textBold}
+                    ${(product.price) && `${tablet.textBold} ${desktop.product__name}`}
                     `
                     }>{product.name}
                 </span>
                 {
                     product.description
-                    && <p className={`${styles.product__description} ${!isCategory && tablet.textDetail}`}>{product.description}</p>
+                    && <p className={`${styles.product__description} ${desktop.product__description} ${!isCategory && tablet.textDetail}`}>{product.description}</p>
                 }
                 {
                     (product.price && !isCategory)
                         ? <div className={styles.footer__description}>
                             <strong>{`$ ${product.price}.00`}</strong>
 
-                            <div className={styles.buttonContainer}>
+                            <div className={`${styles.buttonContainer} ${desktop.buttonContainer}`}>
                                 <CounterButton
                                     count={counterProduct}
                                     fnAux={operation}
@@ -80,7 +84,11 @@ export const Product = ({ product }) => {
                                 <button className={`orangeButton`} onClick={handleAddCart}>ADD TO CARD</button>
                             </div>
                         </div>
-                        : null
+                        : <NavLink
+                            to={`/detailsProduct/${product.slug}`}
+                            className={`orangeButton `}>
+                            see product
+                        </NavLink>
                 }
             </div>
 

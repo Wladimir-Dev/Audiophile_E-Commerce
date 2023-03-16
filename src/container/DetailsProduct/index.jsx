@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom';
-import { CounterButton } from '../../Components/CounterButton';
-import { useCart } from '../../Components/hooks/useCart';
+import React from 'react'
+import {useParams } from 'react-router-dom';
 import { useProducts } from '../../Components/hooks/useProducts';
 import { ListOfProduct } from '../ListOfProduct';
 import { Product } from '../../Components/Product';
+
+
+
 import styles from './styles.module.css'
 import tablet from './tablet.module.css'
+import desktop from './desktop.module.css'
 
 export const DetailsProduct = () => {
 
@@ -22,7 +24,7 @@ export const DetailsProduct = () => {
     console.log("render DetailsProduct")
 
     return (
-        <section className={`${styles.detailsProduct} ${tablet.detailsProduct}`}>
+        <section className={`${styles.detailsProduct} ${tablet.detailsProduct} ${desktop.detailsProduct}`}>
 
             <Product
                 product={product}

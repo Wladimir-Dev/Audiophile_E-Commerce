@@ -1,0 +1,31 @@
+@media only screen and (min-width:1024px) {
+
+    .descriptionWeb {
+        flex-direction: row;
+        /* background-color: rebeccapurple; */
+        justify-content: space-between;
+        align-items: center;
+     width: 90%;
+        margin-bottom: 50px;
+    }
+
+    .descriptionWeb h2 {
+        font-size: 36px;
+    }
+
+    .information {
+        order: 1;
+        width: 50%;
+        text-align: start;
+        padding-right: 6%;
+        align-self: center;
+    }
+
+    .descriptionWeb picture {
+        order: 2;
+        flex: 0 1 50%;
+    }
+    .descriptionWeb p {
+        margin-bottom: 0;
+    }
+}

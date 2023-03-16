@@ -1,9 +1,9 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
-import { DescriptionWeb } from '../../Components/DescriptionWeb';
 import { Product } from '../../Components/Product';
-import { ListOfCategories } from '../ListOfCategories';
+
+
 import styles from './styles.module.css'
+import desktop from './desktop.module.css'
 
 export const ListOfProduct = ({ products }) => {
 
@@ -12,24 +12,18 @@ export const ListOfProduct = ({ products }) => {
 
     return (
         <>
-            <section className={styles.listOfProduct}>
+            <section className={`${styles.listOfProduct} `}>
                 {
-                    products?.map(product => (
-                        <div className={styles.productContainer}
-                            key={product.slug}
-                        >
-                            <Product product={product} />
-                            <NavLink
-                                to={`/detailsProduct/${product.slug}`}
-                                className={`orangeButton`}>
-                                see product
-                            </NavLink>
+                    products?.map((product, index) => (
+                        <div className={`${styles.productContainer} `}
+                            key={product.slug}>
+                            <Product product={product} girar={index % 2 != 0} />
                         </div>
                     ))
                 }
 
             </section>
-           
+
         </>
     )
 }

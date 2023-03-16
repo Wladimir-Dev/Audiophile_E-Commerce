@@ -4,15 +4,11 @@
         margin-top: 40px;
     }
 
-   /*  .product>div:nth-child(2) {
-        flex-grow: 1;
-    }
- */
     .textDetail {
         text-align: start;
     }
     .textBold{
         font-size: 40px;
     }
-
+   
 }

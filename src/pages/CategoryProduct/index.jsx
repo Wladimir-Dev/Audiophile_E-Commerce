@@ -4,7 +4,12 @@ import { DescriptionWeb } from '../../Components/DescriptionWeb';
 import { useProducts } from '../../Components/hooks/useProducts';
 import { ListOfCategories } from '../../container/ListOfCategories';
 import { ListOfProduct } from '../../container/ListOfProduct';
+
+
 import styles from './styles.module.css'
+import desktop from './desktop.module.css'
+
+
 export const CategoryProduct = () => {
 
 
@@ -17,7 +22,7 @@ export const CategoryProduct = () => {
     console.log("render categoryProduct")
 
     return (
-        <section className={styles.categoryProduct}>
+        <section className={`${styles.categoryProduct} ${desktop.categoryProduct}`}>
            
             <ListOfProduct products={leakedProducts}/>
             <ListOfCategories />
