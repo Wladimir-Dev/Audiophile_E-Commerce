@@ -10,4 +10,10 @@
         justify-content: end;
         
     }
+    .product>figure {
+        width: 160px;
+        height: 140px;
+        position: absolute;
+        top: -40px;
+    }
 }

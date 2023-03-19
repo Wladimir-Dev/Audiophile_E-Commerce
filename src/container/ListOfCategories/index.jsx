@@ -7,6 +7,11 @@ import styles from './styles.module.css'
 import tablet from './tablet.module.css'
 import desktop from './desktop.module.css'
 
+const IMAGES_CATEGORY = [
+    './assets/shared/desktop/image-category-thumbnail-earphones.png',
+    './assets/shared/desktop/image-category-thumbnail-headphones.png',
+    './assets/shared/desktop/image-category-thumbnail-speakers.png'
+]
 
 export const ListOfCategories = () => {
 
@@ -23,10 +28,10 @@ export const ListOfCategories = () => {
             <section className={`${styles.categoria} ${tablet.categoria} ${desktop.categoria}`}>
                 <ul >
                     {
-                        categorias.map(categoria => (
+                        categorias.map((categoria,index) => (
                             <li key={categoria.category} className={`${styles.product} ${desktop.product}`}>
                                 <figure>
-                                    <img src={categoria.categoryImage.mobile} alt="categoria imagen" />
+                                    <img src={IMAGES_CATEGORY[index]} alt="categoria imagen" />
                                 </figure>
                                 <strong className={styles.category__title}>{categoria.category}</strong>
                                 <NavLink to={`/${categoria.category}`}>
