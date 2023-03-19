@@ -1,7 +1,24 @@
 @media only screen and (min-width:768px) {
- 
-    .body__itemscard img{
+
+    .body__itemscard img {
         width: 123px;
         height: 123px;
+    }
+
+    .form__item {
+        flex-flow: row wrap;
+        column-gap: 10px;
+        padding: 30px 42px;
+    }
+    .form__item>:is(h2,legend){
+        width: 100%;
+    }
+    .form__item> fieldset{
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+    }
+    .infoShop fieldset:nth-of-type(1){
+        width: 100%;
     }
 }
