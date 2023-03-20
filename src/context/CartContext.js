@@ -13,23 +13,22 @@ export const CartProvider = ({ children }) => {
 
     const addCart = (count, product) => {
 
+        let added = false;
         const indexProduct = cart.findIndex(prod => prod.product.id == product.id);
 
-        if (indexProduct != -1) {
-            alert('ya se encuentra en el carrito')
-            return
-        }
-        else {
+        if (indexProduct == -1) {
+            //no existe en el carrito
             const productCart = {
                 product: product,
                 count: count
             }
             const newProduct = [...cart, productCart];
             setCart(newProduct);
+            added = true;
         }
 
 
-        console.log('product added')
+        return added;
 
 
     }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { CounterButton } from '../CounterButton'
 import { useCart } from '../hooks/useCart'
@@ -9,6 +9,8 @@ import { ImageProduct } from '../ImageProduct'
 import styles from './styles.module.css'
 import tablet from './tablet.module.css'
 import desktop from './desktop.module.css'
+import { PopUpItem } from '../Modals/PopUpItem'
+import { createPortal } from 'react-dom'
 
 
 
@@ -20,9 +22,24 @@ export const Product = ({ product, girar = false }) => {
     const [counterProduct, setCounterProduct] = useState(1);
     const { addCart } = useCart();
 
+    const [showModal, setShowModal] = useState(false);
+    const addedRef = useRef(false);
+
     pathname = pathname.slice(1)
 
     const isCategory = categories.some(category => category.category == pathname);
+    const pruebaRef = useRef(false);
+
+
+    useEffect(() => {
+        if (showModal) {
+            setTimeout(() => {
+                setShowModal(false);
+            }, 2000);
+        }
+    }, [showModal])
+
+
 
     const operation = (operacion) => {
 
@@ -35,17 +52,18 @@ export const Product = ({ product, girar = false }) => {
 
     const handleAddCart = (e) => {
 
-        addCart(counterProduct, product);
+        addedRef.current = addCart(counterProduct, product);
         setCounterProduct(1);
+
+        setShowModal(true);
 
     }
     console.log("render product")
-    console.log("girar= "+girar)
 
     return (
         <article
             className={`${styles.product} ${tablet.product} ${product.price && desktop.product}`} key={product.id}>
-            <div className={((girar && isCategory)||(product.price && !isCategory)) ? desktop.girar :undefined}>
+            <div className={((girar && isCategory) || (product.price && !isCategory)) ? desktop.girar : undefined}>
                 {
                     isCategory
                         ? <ImageCategoryProduct product={product} />
@@ -91,7 +109,10 @@ export const Product = ({ product, girar = false }) => {
                         </NavLink>
                 }
             </div>
-
+            {
+                showModal && createPortal(<PopUpItem added={addedRef.current} />, document.body)
+            }
         </article>
+
     )
 }
