@@ -6,8 +6,8 @@ export const useLocalStorage = ({ nameStorage, initialValue }) => {
     const nameLocalStorage = useRef(nameStorage);
 
     useEffect(() => {
-        state?.length>0 && window.localStorage.setItem("wakanda", JSON.stringify([state]))
-        console.log(nameLocalStorage.current)
+        window.localStorage.setItem(nameLocalStorage.current, JSON.stringify(state))
+        console.log(state)
     }, [state])
 
 

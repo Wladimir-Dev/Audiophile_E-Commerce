@@ -8,13 +8,13 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 
-    // const { state: cart, setState: setCart } = useLocalStorage("cartAudioECommerce", [])
-    const [cart, setCart] = useState([]);
+    const { state: cart, setState: setCart } = useLocalStorage({ nameStorage: "cartAudioECommerce", initialValue: [] })
+  
 
     const addCart = (count, product) => {
 
         let added = false;
-        const indexProduct = cart.findIndex(prod => prod.product.id == product.id);
+        const indexProduct = cart?.findIndex(prod => prod.product.id == product.id);
 
         if (indexProduct == -1) {
             //no existe en el carrito

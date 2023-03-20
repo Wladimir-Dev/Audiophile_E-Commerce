@@ -24,7 +24,7 @@ export const Menu = () => {
 
     const cartCheckref = useRef();
     const optionCheckref = useRef();
-    const count = cart.length;
+    const count = cart?.length;
 
 
     const handleClickClose = () => {
