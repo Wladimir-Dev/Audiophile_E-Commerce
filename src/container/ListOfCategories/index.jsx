@@ -28,7 +28,8 @@ export const ListOfCategories = () => {
             <section className={`${styles.categoria} ${tablet.categoria} ${desktop.categoria}`}>
                 <ul >
                     {
-                        categorias.map((categoria,index) => (
+                        categorias.map((categoria, index) => (
+                            categoria.category != '' &&
                             <li key={categoria.category} className={`${styles.product} ${desktop.product}`}>
                                 <figure>
                                     <img src={IMAGES_CATEGORY[index]} alt="categoria imagen" />

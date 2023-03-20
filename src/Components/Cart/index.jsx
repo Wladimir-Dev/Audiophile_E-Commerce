@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { CounterButton } from '../CounterButton';
 import { useCart } from '../hooks/useCart'
 import { CloseIcon } from '../Icons';
 import { ProductCart } from '../ProductCart';
@@ -10,18 +9,26 @@ import styles from './styles.module.css'
 export const Cart = ({ closeCart }) => {
 
   const { cart, updateCart, removeitem, removeAllItems, calculateTotal } = useCart();
+ 
   const navigate = useNavigate();
 
   const total = calculateTotal();
+
+
 
   const handleClick = (e) => {
     closeCart();
     navigate('/checkout');
   }
+
+
   const handleClose = () => {
     closeCart();
   }
 
+
+
+  
   return (
     <>
       <section className={styles.card}>

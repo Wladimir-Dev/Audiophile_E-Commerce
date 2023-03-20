@@ -8,12 +8,15 @@ export function useProducts() {
     const [products, setProducts] = useState(productsJson)
 
     const getCategorias = () => {
+        let auxCategories;
 
-        return products.filter((product, index, self) =>
+        auxCategories = products.filter((product, index, self) =>
             index === self.findIndex((t) => (
                 t.category === product.category))
         )
 
+        auxCategories.push({ category: '' })
+        return auxCategories;
     }
 
     return { products, getCategorias }

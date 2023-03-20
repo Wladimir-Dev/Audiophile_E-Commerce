@@ -1,7 +1,6 @@
 .footer{
     background-color: black;
     width: 100%;
-    padding: 25px;
     height: auto;
     color: white;
     padding: 50px 0px;
@@ -23,7 +22,7 @@
     color: white;
     text-decoration: none;
 }
-.footer >span{
+.footerEnd >span{
     margin: 0 auto;
     width: 100%;
     text-align: center;

@@ -1,5 +1,9 @@
 import React from 'react'
+
+
 import styles from './styles.module.css'
+
+
 export const CounterButton = ({ count, fnAux, fromCard = false }) => {
 
     const handleCounter = (e) => {
@@ -10,7 +14,7 @@ export const CounterButton = ({ count, fnAux, fromCard = false }) => {
                 return
             }
             else {
-                window.confirm("seguro eliminar del carrito?") && fnAux('restar')
+                window.confirm("¿Seguro eliminar del carrito?") && fnAux('restar')
                 return
             }
         }

@@ -14,13 +14,8 @@ export const CategoryBar = () => {
     const categories = getCategorias();
     let { pathname } = useLocation();
 
-    pathname = pathname.slice(1);
+    pathname = pathname.slice(1); //elimino el caracter '/' del path
 
-
-    categories.push(
-        {
-            category: ''
-        })
 
     const isCategory = categories.some(category => category.category == pathname);
 
