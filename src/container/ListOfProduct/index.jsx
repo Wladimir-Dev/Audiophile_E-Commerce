@@ -3,20 +3,15 @@ import { Product } from '../../Components/Product';
 
 
 import styles from './styles.module.css'
-import desktop from './desktop.module.css'
 
 export const ListOfProduct = ({ products }) => {
-
-
-    console.log("render list of product")
 
     return (
         <>
             <section className={`${styles.listOfProduct} `}>
                 {
                     products?.map((product, index) => (
-                        <div className={`${styles.productContainer} `}
-                            key={product.slug}>
+                        <div key={product.slug} className={styles.productContainer}>
                             <Product product={product} girar={index % 2 != 0} />
                         </div>
                     ))

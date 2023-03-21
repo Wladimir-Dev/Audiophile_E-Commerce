@@ -14,7 +14,7 @@ export const Footer = () => {
 
 
     return (
-        <footer className={`${styles.footer} ${tablet.footer}`}>
+        <footer className={`${styles.footer} ${tablet.footer} ${desktop.footer}`}>
 
             <div className={`${styles.header} ${tablet.header} ${desktop.header}`}>
                 <NavLink to={`/`}>
@@ -32,13 +32,13 @@ export const Footer = () => {
             <div className={`${styles.footerEnd} ${tablet.footerEnd}`}>
                 <span>Copyright © {year}. All Rights Reserved</span>
                 <div className={styles.container__socialMedia}>
-                    <a href='https://github.com/Wladimir-Dev?tab=repositories' target={'_blank'}>
+                    <a href='https://github.com/Wladimir-Dev/Audiophile_E-Commerce' target={'_blank'}>
                         <img src="./assets/shared/desktop/icon-facebook.svg" alt="" />
                     </a>
-                    <a href='https://github.com/Wladimir-Dev?tab=repositories' target={'_blank'}>
+                    <a href='https://github.com/Wladimir-Dev/Audiophile_E-Commerce' target={'_blank'}>
                         <img src="./assets/shared/desktop/icon-twitter.svg" alt="" />
                     </a>
-                    <a href='https://github.com/Wladimir-Dev?tab=repositories' target={'_blank'}>
+                    <a href='https://github.com/Wladimir-Dev/Audiophile_E-Commerce' target={'_blank'}>
                         <img src="./assets/shared/desktop/icon-instagram.svg" alt="" />
                     </a>
 

@@ -19,7 +19,7 @@
     display: inline-block;
 }
 
-.detailsProduct>p {
+.information> p{
     font-size: 15px;
     opacity: 0.9;
     line-height: 25px;
@@ -51,8 +51,6 @@
 .gridContainer {
     margin-top: 80px;
     display: grid;
-   /*  grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr; */
     gap: 15px;
 }
 

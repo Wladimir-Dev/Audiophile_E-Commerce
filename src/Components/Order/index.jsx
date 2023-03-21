@@ -7,12 +7,14 @@ import { ProductCart } from '../ProductCart'
 
 import styles from './styles.module.css'
 import tablet from './tablet.module.css'
+import desktop from './desktop.module.css'
+
 export const Order = ({ total }) => {
 
   const { cart } = useCart();
 
   return (
-    <section className={`${styles.order} ${tablet.order}`}>
+    <section className={`${styles.order} ${tablet.order} ${desktop.order}`}>
       <div className={styles.orderIcon}>
         <CheckIcon />
       </div>

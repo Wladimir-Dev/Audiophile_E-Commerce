@@ -1,6 +1,6 @@
 @media only screen and (min-width:1024px) {
     
-    .product{
+    .category{
       
         height: 230px;
         margin-right: 10px;
@@ -10,7 +10,7 @@
         justify-content: end;
         
     }
-    .product>figure {
+    .category>figure {
         width: 200px;
         height: 180px;
         top: -40px;

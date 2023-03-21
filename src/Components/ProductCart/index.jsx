@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { CounterButton } from '../CounterButton'
+
+
 import styles from './styles.module.css'
 
 
@@ -18,11 +20,10 @@ export const ProductCart = ({ productCart, updateCart}) => {
     }
 
 
-    console.log("render item cart")
     return (
-        <div className={styles.card__item}>
+        <div className={styles.productCart}>
             <img src={product.image.mobile} alt={product.name} />
-            <div className={styles.card__itemDetails}>
+            <div className={styles.details}>
                 <span className={styles.name}>
                     {productName[0]}
                     {productName[1].toUpperCase() == "MARK" && `MK ${productName[2]}`}

@@ -9,11 +9,10 @@ import styles from './styles.module.css'
 export const Cart = ({ closeCart }) => {
 
   const { cart, updateCart, removeitem, removeAllItems, calculateTotal } = useCart();
- 
+
   const navigate = useNavigate();
 
   const total = calculateTotal();
-
 
 
   const handleClick = (e) => {
@@ -26,9 +25,6 @@ export const Cart = ({ closeCart }) => {
     closeCart();
   }
 
-
-
-  
   return (
     <>
       <section className={styles.card}>
@@ -46,6 +42,7 @@ export const Cart = ({ closeCart }) => {
                 {
                   cart.map(item => (
                     <ProductCart
+                      key={item.product.id}
                       productCart={item}
                       updateCart={updateCart}
                       removeitem={removeitem}

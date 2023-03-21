@@ -1,17 +1,17 @@
-.card__item {
+.productCart {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-.card__item img {
+.productCart img {
     width: 55px;
     height: 55px;
     border-radius: 8px;
 }
 
-.card__itemDetails {
+.details {
     display: flex;
     flex-direction: column;
 

@@ -1,13 +1,17 @@
 import { useState } from "react"
+import { useLocation } from "react-router-dom";
 import data from '.././../mocks/data.json'
 
 
 export function useProducts() {
-    const productsJson = data;
 
-    const [products, setProducts] = useState(productsJson)
+    const productsJson = data;
+    let { pathname } = useLocation();
+
+    const [products] = useState(productsJson)
 
     const getCategorias = () => {
+
         let auxCategories;
 
         auxCategories = products.filter((product, index, self) =>
@@ -16,8 +20,21 @@ export function useProducts() {
         )
 
         auxCategories.push({ category: '' })
+
         return auxCategories;
     }
 
-    return { products, getCategorias }
+    const typeRoute = () => {
+      
+        const categories = getCategorias();
+        const auxPathName = getNamePath();
+
+        return categories.some(category => category.category == auxPathName);
+    }
+    
+    const getNamePath = () => {
+        return pathname.slice(1)  //elimino el caracter '/' del path
+    }
+
+    return { products, getCategorias, typeRoute, getNamePath }
 }

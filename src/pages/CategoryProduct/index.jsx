@@ -1,5 +1,4 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
 import { DescriptionWeb } from '../../Components/DescriptionWeb';
 import { useProducts } from '../../Components/hooks/useProducts';
 import { ListOfCategories } from '../../container/ListOfCategories';
@@ -13,18 +12,16 @@ import desktop from './desktop.module.css'
 export const CategoryProduct = () => {
 
 
-    const { products } = useProducts();
-    let { pathname: currentCategory } = useLocation();
+    const { products, getNamePath } = useProducts();
 
-    currentCategory = currentCategory.slice(1);
+    const currentCategory = getNamePath();
 
     const leakedProducts = products.filter(product => product.category == currentCategory);
-    console.log("render categoryProduct")
-
+   
     return (
         <section className={`${styles.categoryProduct} ${desktop.categoryProduct}`}>
-           
-            <ListOfProduct products={leakedProducts}/>
+
+            <ListOfProduct products={leakedProducts} />
             <ListOfCategories />
             <DescriptionWeb />
         </section>

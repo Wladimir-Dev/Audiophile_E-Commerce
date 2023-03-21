@@ -1,10 +1,8 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext} from 'react'
 import { useLocalStorage } from '../Components/hooks/useLocalStorage';
 
 
 export const CartContext = createContext();
-
-
 
 export const CartProvider = ({ children }) => {
 
@@ -27,14 +25,11 @@ export const CartProvider = ({ children }) => {
             added = true;
         }
 
-
         return added;
-
-
     }
 
     const updateCart = (count, idProduct) => {
-        console.log(`cantidad del producto ${count}`)
+       
         if (count == 0) {
             removeitem(idProduct);
             return

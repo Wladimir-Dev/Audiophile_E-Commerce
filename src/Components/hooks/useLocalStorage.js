@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export const useLocalStorage = ({ nameStorage, initialValue }) => {
 
@@ -6,8 +6,9 @@ export const useLocalStorage = ({ nameStorage, initialValue }) => {
     const nameLocalStorage = useRef(nameStorage);
 
     useEffect(() => {
+    
         window.localStorage.setItem(nameLocalStorage.current, JSON.stringify(state))
-        console.log(state)
+       
     }, [state])
 
 

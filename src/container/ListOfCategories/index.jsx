@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { useProducts } from '../../Components/hooks/useProducts';
 
@@ -15,30 +15,32 @@ const IMAGES_CATEGORY = [
 
 export const ListOfCategories = () => {
 
-    const { products, getCategorias } = useProducts();
-
+    const { getCategorias } = useProducts();
 
     const categorias = getCategorias();
-
-    console.log("render catgeoria")
 
 
     return (
         <>
-            <section className={`${styles.categoria} ${tablet.categoria} ${desktop.categoria}`}>
+            <section className={`${styles.listOfCategories} ${tablet.listOfCategories} ${desktop.listOfCategories}`}>
                 <ul >
                     {
                         categorias.map((categoria, index) => (
-                            categoria.category != '' &&
-                            <li key={categoria.category} className={`${styles.product} ${desktop.product}`}>
-                                <figure>
-                                    <img src={IMAGES_CATEGORY[index]} alt="categoria imagen" />
-                                </figure>
-                                <strong className={styles.category__title}>{categoria.category}</strong>
-                                <NavLink to={`/${categoria.category}`}>
-                                    SHOP <img src="./assets/shared/desktop/icon-arrow-right.svg" alt="" />
-                                </NavLink>
 
+                            categoria.category != ''
+                            && <li
+                                key={categoria.category}
+                                className={`${styles.category} ${desktop.category}`}>
+
+                                    <figure>
+                                        <img src={IMAGES_CATEGORY[index]} alt="category image" />
+                                    </figure>
+                                    <strong className={styles.title}>
+                                        {categoria.category}
+                                    </strong>
+                                    <NavLink to={`/${categoria.category}`}>
+                                        SHOP <img src="./assets/shared/desktop/icon-arrow-right.svg" alt="arrow icon" />
+                                    </NavLink>
                             </li>
                         ))
                     }

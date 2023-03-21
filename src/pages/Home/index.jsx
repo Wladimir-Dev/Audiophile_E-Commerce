@@ -14,14 +14,16 @@ export const Home = () => {
       <main className={`${styles.home} ${tablet.home} ${desktop.home}`}>
 
         <ListOfCategories />
+        
         <section className={`${styles.productsHome} ${tablet.productsHome} ${desktop.productsHome}`}>
-
           <div className={`${styles.productHome__1} ${tablet.productHome__1} ${desktop.productHome__1}`}>
+           
             <picture>
               <source media="(min-width: 1024px)" srcSet="./assets/home/desktop/image-speaker-zx9.png" />
               <source media="(min-width: 768px)" srcSet="./assets/home/tablet/image-speaker-zx9.png" />
               <img src="./assets/home/mobile/image-speaker-zx9.png" alt="speaker image" />
             </picture>
+            
             <div className={styles.productHome__1__rigth}>
               <h2>zx9 Speaker</h2>
               <span>
@@ -33,8 +35,7 @@ export const Home = () => {
                 to={`/detailsProduct/zx9-speaker`}>see product
               </NavLink>
             </div>
-
-
+         
           </div>
 
 

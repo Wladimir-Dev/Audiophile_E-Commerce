@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { CounterButton } from '../CounterButton'
 import { useCart } from '../hooks/useCart'
 import { useProducts } from '../hooks/useProducts'
-import { ImageCategoryProduct } from '../ImageCategoryProduct'
 import { ImageProduct } from '../ImageProduct'
 
 import styles from './styles.module.css'
 import tablet from './tablet.module.css'
 import desktop from './desktop.module.css'
+
+
 import { PopUpItem } from '../Modals/PopUpItem'
 import { createPortal } from 'react-dom'
 
@@ -16,20 +17,15 @@ import { createPortal } from 'react-dom'
 
 export const Product = ({ product, girar = false }) => {
 
-    const { getCategorias } = useProducts();
-    const categories = getCategorias();
-    let { pathname } = useLocation();
-    const [counterProduct, setCounterProduct] = useState(1);
-    const { addCart } = useCart();
 
+    const { addCart } = useCart();
+    const { typeRoute } = useProducts();
+
+    const [counterProduct, setCounterProduct] = useState(1);
     const [showModal, setShowModal] = useState(false);
     const addedRef = useRef(false);
 
-    pathname = pathname.slice(1)
-
-    const isCategory = categories.some(category => category.category == pathname);
-    const pruebaRef = useRef(false);
-
+    const isCategory = typeRoute();
 
     useEffect(() => {
         if (showModal) {
@@ -43,33 +39,28 @@ export const Product = ({ product, girar = false }) => {
 
     const operation = (operacion) => {
 
-        if (operacion == 'restar') {
-            setCounterProduct(prev => prev - 1);
-        } else {
-            setCounterProduct(prev => prev + 1);
-        }
+        operacion == 'restar'
+            ? setCounterProduct(prev => prev - 1)
+            : setCounterProduct(prev => prev + 1)
     }
 
     const handleAddCart = (e) => {
 
         addedRef.current = addCart(counterProduct, product);
         setCounterProduct(1);
-
         setShowModal(true);
 
     }
-    console.log("render product")
 
     return (
         <article
-            className={`${styles.product} ${tablet.product} ${product.price && desktop.product}`} key={product.id}>
+            key={product.id}
+            className={`${styles.product} ${tablet.product} ${product.price && desktop.product}`}>
+
             <div className={((girar && isCategory) || (product.price && !isCategory)) ? desktop.girar : undefined}>
-                {
-                    isCategory
-                        ? <ImageCategoryProduct product={product} />
-                        : <ImageProduct product={product} />
-                }
+                <ImageProduct product={product} fromCategory={isCategory} />
             </div>
+
             <div
                 className={`${styles.container__description} ${desktop.container__description} ${!product.price && `${styles.centerItems} ${desktop.centerItems}`}`}>
                 {
@@ -77,17 +68,23 @@ export const Product = ({ product, girar = false }) => {
                     <span className={styles.newProduct}>new product</span>
                 }
                 <span
-                    className={
-                        `${styles.product__name}
+                    className={`
+                    ${styles.product__name}
                     ${tablet.product__name} 
                     ${(product.price && !isCategory) && tablet.textDetail}
                     ${(product.price) && `${tablet.textBold} ${desktop.product__name}`}
-                    `
-                    }>{product.name}
+                    ` }>
+                    {product.name}
                 </span>
                 {
                     product.description
-                    && <p className={`${styles.product__description} ${desktop.product__description} ${!isCategory && tablet.textDetail}`}>{product.description}</p>
+                    &&
+                    <p className={`
+                    ${styles.description} ${desktop.description} 
+                    ${!isCategory && tablet.textDetail}
+                    `}>
+                        {product.description}
+                    </p>
                 }
                 {
                     (product.price && !isCategory)

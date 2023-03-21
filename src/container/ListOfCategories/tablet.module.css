@@ -1,7 +1,7 @@
 @media only screen and (min-width:768px) {
 
     
-    .categoria>ul {
+    .listOfCategories>ul {
         flex-direction: row;
         column-gap: 10px;
     }

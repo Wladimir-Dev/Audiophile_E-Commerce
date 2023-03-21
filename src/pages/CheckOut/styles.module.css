@@ -88,6 +88,9 @@
     font-weight: 600;
 
 }
+.body>div>div{
+    column-gap: 5px;
+}
 .body>button{
     width: 100%;
 }
@@ -117,7 +120,7 @@
 .body__itemscard>div div:nth-child(3)::before {
     content: "X";
     position: absolute;
-    left: 26px;
+    left: 10px;
     font-size: 12px;
     top: 12px;
     font-weight: 800;

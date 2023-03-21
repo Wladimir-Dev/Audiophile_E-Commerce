@@ -10,14 +10,12 @@ import desktop from './desktop.module.css'
 
 export const CategoryBar = () => {
 
-    const { getCategorias } = useProducts();
-    const categories = getCategorias();
-    let { pathname } = useLocation();
+    const { typeRoute,getNamePath } = useProducts();
+    
 
-    pathname = pathname.slice(1); //elimino el caracter '/' del path
+    const pathname = getNamePath();
 
-
-    const isCategory = categories.some(category => category.category == pathname);
+    const isCategory = typeRoute();
 
     if (!isCategory) return
 

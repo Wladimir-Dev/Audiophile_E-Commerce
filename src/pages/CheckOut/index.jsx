@@ -1,4 +1,4 @@
-import React, { useId, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { useCart } from '../../Components/hooks/useCart';
 import { Order } from '../../Components/Order';
 import { ProductCart } from '../../Components/ProductCart';
@@ -25,8 +25,6 @@ export const CheckOut = () => {
   const showError = (input, accion) => {
     labelInput = document.querySelector("#" + input.id + " + small");
     labelInput.className = accion;
-
-
   }
 
 
@@ -48,13 +46,10 @@ export const CheckOut = () => {
       }
     }
 
-
     setPay(prev => !prev)
     window.scrollTo(0, 0);
-
   }
 
-  console.log("reeeender")
 
   return (
     <main className={styles.main}>
@@ -66,8 +61,8 @@ export const CheckOut = () => {
             <div className={`${styles.form__item} ${tablet.form__item}`}>
               <h2>checkout</h2>
               <legend>billing details</legend>
+            
               <fieldset>
-
                 <label htmlFor="nameID" className={styles.labelInput}>Name</label>
                 <input name="nameID" id="nameID" type="text" placeholder='Ana Pellizari' required />
                 <small htmlFor="nameID" hidden>se requiere un nombre válido </small>
@@ -86,8 +81,10 @@ export const CheckOut = () => {
               </fieldset>
 
             </div>
+
             <div className={`${styles.form__item} ${`${tablet.form__item} ${tablet.infoShop}`}`}>
               <legend>shipping info</legend>
+             
               <fieldset>
                 <label htmlFor="addressID" className={styles.labelInput}>Your Address</label>
                 <input id="addressID" type="text" placeholder='117 Williams Avenue' required />
@@ -105,14 +102,12 @@ export const CheckOut = () => {
                 <label htmlFor="cityID" className={styles.labelInput}>City</label>
                 <input id="cityID" type="text" placeholder='Chicago' required />
                 <small htmlFor="cityID" hidden>Ingrese una ciudad válida</small>
-
               </fieldset>
 
               <fieldset>
                 <label htmlFor="countryID" className={styles.labelInput}>Country</label>
                 <input id="countryID" type="text" placeholder='United States' required />
                 <small htmlFor="countryID" hidden>Ingrese una país válido</small>
-
               </fieldset>
             </div>
           </div>
