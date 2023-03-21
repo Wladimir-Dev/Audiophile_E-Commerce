@@ -1,3 +1,6 @@
+
+![image (9)](https://user-images.githubusercontent.com/73859922/226517056-b129cb41-46bd-42dd-b485-dc732cb4f4e3.png)
+
 # E-commerce AudioPhile
 
 ​**React Hooks** empleados:
