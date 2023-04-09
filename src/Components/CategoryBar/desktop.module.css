@@ -5,6 +5,14 @@
     margin: 0 auto;
    }
    
+   @keyframes aparicion {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+   }
     .headerHome {
         display: flex;
         flex-direction: column;
@@ -14,6 +22,7 @@
         padding-right: 50%;
         background-size: contain;
         min-height: 600px;
+        animation: aparicion 1s 1 ease-in-out;
       
     }
     .headerHome p{
