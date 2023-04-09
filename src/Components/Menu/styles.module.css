@@ -97,6 +97,7 @@ header {
 }
 
 .options {
+    display: flex;
     position: absolute;
     top: 75px;
     left: 0;
@@ -105,11 +106,12 @@ header {
     align-items: center;
     list-style: none;
     background-color: white;
-    display: none;
     width: 100%;
     height: 180px;
-    transition: all .26s ease-in-out;
-
+    /* transition: all .26s ease-in-out; */
+    transition: .3s;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .options a {
@@ -121,8 +123,9 @@ header {
     z-index: 0;
 }
 
-.burger__button~input:checked~.options {
-    display: flex;
+.burger__button~ input:checked~ .options {
+    visibility: visible;
+    opacity: 1;
 }
 .optionsNavigation{
     display: none;
