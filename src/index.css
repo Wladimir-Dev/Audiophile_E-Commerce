@@ -1,5 +1,4 @@
 :root {
-
   --clr-orange: hsl(22, 65%, 57%);
   --clr-almost-black: hsla(0, 0%, 6%, 0.955);
   --clr-light-gray: hsl(0, 0%, 95%);
@@ -9,15 +8,15 @@
   --clr-white: hsl(0, 0%, 100%);
 }
 
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Manrope', sans-serif;
 }
-*, :after, :before {
+*,
+:after,
+:before {
   box-sizing: border-box;
 }
 body {
@@ -46,8 +45,7 @@ body {
 .NoVisible {
   display: none;
 }
-img{
+img {
   max-width: 100%;
   height: auto;
 }
-

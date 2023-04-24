@@ -1,115 +1,109 @@
 .home {
-    width: 85%;
-    margin: 0 auto;
-    
+  width: 85%;
+  margin: 0 auto;
 }
 
 .productsHome {
-    display: grid;
-    width: 100%;
-    row-gap: 20px;
-    margin-bottom: 40px;
+  display: grid;
+  width: 100%;
+  row-gap: 20px;
+  margin-bottom: 40px;
 }
 
 .productsHome :is(h2, button) {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .productsHome div {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 .productsHome img {
-    width: 100%;
+  width: 100%;
 }
 
 .productHome__1 {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 20px;
-    background-color: var(--clr-orange);
-    color: white;
-    padding: 40px;
-    padding-bottom: 60px;
-    text-align: center;
-    background-image: url('../../../public/assets/home/desktop/pattern-circles.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center top;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  background-color: var(--clr-orange);
+  color: white;
+  padding: 40px;
+  padding-bottom: 60px;
+  text-align: center;
+  background-image: url('../../../public/assets/home/desktop/pattern-circles.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
 }
-.productHome__1__rigth{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 15px;
+.productHome__1__rigth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
 }
 
 .productHome__1 img {
-    width: 135px;
+  width: 135px;
 }
-.productHome__1 h2{
-    font-size: 36px;
-    line-height: 45px;
+.productHome__1 h2 {
+  font-size: 36px;
+  line-height: 45px;
 }
-.productHome__1 span{
-    font-size: 15px;
-    line-height: 25px;
+.productHome__1 span {
+  font-size: 15px;
+  line-height: 25px;
 }
 
 .productHome__2 {
-    background-image: url('../../../public/assets/home/mobile/image-speaker-zx7.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 100% 100%;
-    min-height: 265px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    row-gap: 30px;
+  background-image: url('../../../public/assets/home/mobile/image-speaker-zx7.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 100%;
+  min-height: 265px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  row-gap: 30px;
 }
 .productHome__2 h2,
-.productHome__4 h2{
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 1px;
+.productHome__4 h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.productHome__3 picture img{
-    border-radius: 8px;
-    height: 100%;
+.productHome__3 picture img {
+  border-radius: 8px;
+  height: 100%;
 }
-.productHome__4{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 20px;
-    padding: 35px;
-    padding-left: 20px;
-    background-color: var(--clr-light-gray);
-    text-align: center;
-
+.productHome__4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  padding: 35px;
+  padding-left: 20px;
+  background-color: var(--clr-light-gray);
+  text-align: center;
 }
 .productHome__1 a,
 .productHome__2 a,
-.productHome__4 a
-
-{
-    padding: 14px;
-    display: inline-block;
+.productHome__4 a {
+  padding: 14px;
+  display: inline-block;
 }
-.productHome__1 a{
-    background-color: black;
+.productHome__1 a {
+  background-color: black;
 }
 .productHome__2 a,
-.productHome__4 a{
-   background-color: transparent;
-   color: black;
-   border: 1px solid black;
-   
+.productHome__4 a {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
 }

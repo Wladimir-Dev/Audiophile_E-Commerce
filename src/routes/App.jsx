@@ -1,30 +1,28 @@
-import { useEffect } from 'react';
-import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
-import '../App.css';
-import { DetailsProduct } from '../container/DetailsProduct';
-import { Footer } from '../Components/Footer';
-import { Home } from '../pages/Home';
-import { Menu } from '../Components/Menu';
-import { CartProvider } from '../context/CartContext';
-import { CategoryProduct } from '../pages/CategoryProduct';
-import { CheckOut } from '../pages/CheckOut';
+import { useEffect } from 'react'
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
+import '../App.css'
+import { DetailsProduct } from '../container/DetailsProduct'
+import { Footer } from '../Components/Footer'
+import { Home } from '../pages/Home'
+import { Menu } from '../Components/Menu'
+import { CartProvider } from '../context/CartContext'
+import { CategoryProduct } from '../pages/CategoryProduct'
+import { CheckOut } from '../pages/CheckOut'
 
 function App() {
-
   const ScrollToTop = () => {
-    const { pathname } = useLocation();
+    const { pathname } = useLocation()
 
     useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
+      window.scrollTo(0, 0)
+    }, [pathname])
 
-    return null;
+    return null
   }
-  console.log("render app")
+  console.log('render app')
   return (
-    <div className="App">
+    <div className='App'>
       <CartProvider>
-
         <HashRouter>
           <Menu />
           <ScrollToTop />
@@ -35,13 +33,13 @@ function App() {
             <Route path='/earphones' element={<CategoryProduct />} />
             <Route path='/detailsProduct/:slug' element={<DetailsProduct />} />
             <Route path='/checkout' element={<CheckOut />} />
-            <Route path="*" element={<h1>no found</h1>} />
+            <Route path='*' element={<h1>no found</h1>} />
           </Routes>
           <Footer />
         </HashRouter>
       </CartProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

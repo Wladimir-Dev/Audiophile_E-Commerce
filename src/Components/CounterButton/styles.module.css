@@ -1,24 +1,21 @@
-.buttonCounter{
-   
-    width: 100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 40px;
-    text-align: center;
-    font-size: 16px;    
-    background-color: var(--clr-light-gray);
-    
+.buttonCounter {
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  background-color: var(--clr-light-gray);
 }
-.fromCard{
-    width: 80px;
+.fromCard {
+  width: 80px;
 }
-.buttonCounter button{
-    font-size: 18px;
-    background-color: transparent;
-    height: 100%;
-    width: 100%;
-    border-style: none;
-    text-align: center;
-   
+.buttonCounter button {
+  font-size: 18px;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  border-style: none;
+  text-align: center;
 }

@@ -1,24 +1,21 @@
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
+  .categoryBar {
+    min-height: 200px;
+  }
+  .categoryBar > h2 {
+    padding-top: 60px;
+  }
+  .headerHome {
+    background-image: url('../../../public/assets/home/tablet/image-header.jpg');
+    padding: 93px 90px;
+  }
 
-    .categoryBar{
-        min-height: 200px;
-    }
-    .categoryBar >h2{
-        padding-top: 60px;
+  .headerHome > h2 {
+    font-size: 55px;
+    line-height: 57px;
+  }
 
-    }
-    .headerHome {
-        background-image: url('../../../public/assets/home/tablet/image-header.jpg');
-        padding: 93px 90px;
-    }
-
-    .headerHome>h2 {
-        font-size: 55px;
-        line-height: 57px;
-    }
-
-    .headerHome>p {
-        padding: 0px 70px;
-    }
-
+  .headerHome > p {
+    padding: 0px 70px;
+  }
 }

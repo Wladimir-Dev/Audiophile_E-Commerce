@@ -1,40 +1,36 @@
-import { useState } from "react"
-import { useLocation } from "react-router-dom";
+import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import data from '.././../mocks/data.json'
 
-
 export function useProducts() {
+  const productsJson = data
+  let { pathname } = useLocation()
 
-    const productsJson = data;
-    let { pathname } = useLocation();
+  const [products] = useState(productsJson)
 
-    const [products] = useState(productsJson)
+  const getCategorias = () => {
+    let auxCategories
 
-    const getCategorias = () => {
+    auxCategories = products.filter(
+      (product, index, self) =>
+        index === self.findIndex((t) => t.category === product.category)
+    )
 
-        let auxCategories;
+    auxCategories.push({ category: '' })
 
-        auxCategories = products.filter((product, index, self) =>
-            index === self.findIndex((t) => (
-                t.category === product.category))
-        )
+    return auxCategories
+  }
 
-        auxCategories.push({ category: '' })
+  const typeRoute = () => {
+    const categories = getCategorias()
+    const auxPathName = getNamePath()
 
-        return auxCategories;
-    }
+    return categories.some((category) => category.category == auxPathName)
+  }
 
-    const typeRoute = () => {
-      
-        const categories = getCategorias();
-        const auxPathName = getNamePath();
+  const getNamePath = () => {
+    return pathname.slice(1) //elimino el caracter '/' del path
+  }
 
-        return categories.some(category => category.category == auxPathName);
-    }
-    
-    const getNamePath = () => {
-        return pathname.slice(1)  //elimino el caracter '/' del path
-    }
-
-    return { products, getCategorias, typeRoute, getNamePath }
+  return { products, getCategorias, typeRoute, getNamePath }
 }

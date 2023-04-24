@@ -1,23 +1,21 @@
 .navigationOption {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 10px;
-    list-style: none;
-    width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  list-style: none;
+  width: 100%;
 }
-.navigationOption:is(a,li){
-    width: 100%;
-    display: inline-block;
-    text-align: center;
+.navigationOption:is(a, li) {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 }
 .navigationOption a {
-    text-decoration: none;
+  text-decoration: none;
 }
-.isActive{
-    padding-bottom: 5px;
-    border-bottom: 1px solid var(--clr-peach);
-  
+.isActive {
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--clr-peach);
 }

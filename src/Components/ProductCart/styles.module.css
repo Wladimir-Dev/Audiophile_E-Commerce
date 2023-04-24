@@ -1,32 +1,29 @@
 .productCart {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .productCart img {
-    width: 55px;
-    height: 55px;
-    border-radius: 8px;
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
 }
 
 .details {
-    display: flex;
-    flex-direction: column;
-
-
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
-    font-weight: 700;
-    color: black;
+  font-weight: 700;
+  color: black;
 }
 
 .price {
-    font-size: 14px;
-    font-weight: 700;
-    color: hsl(0deg 0% 45.88%);
-    margin-right: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: hsl(0deg 0% 45.88%);
+  margin-right: 18px;
 }
-

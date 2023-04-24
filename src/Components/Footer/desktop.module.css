@@ -1,15 +1,15 @@
-@media only screen and (min-width:1024px) {
-   .footer{
+@media only screen and (min-width: 1024px) {
+  .footer {
     padding: 60px 120px;
-   }
-   .footer> p{
+  }
+  .footer > p {
     width: 50%;
-   }
-    .header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .header ul{
-        justify-content: end;
-    }
+  }
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .header ul {
+    justify-content: end;
+  }
 }

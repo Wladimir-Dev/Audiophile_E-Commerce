@@ -1,53 +1,51 @@
 .categoryBar {
-    width: 90%;
-    padding-top: 20px;
-    color: white;
-    margin: 0 auto;
-    text-align: center;
-    min-height: 90px;
-  
+  width: 90%;
+  padding-top: 20px;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 90px;
 }
 
-.categoryBar>h2 {
-
-    text-transform: uppercase;
-    font-size: 28px;
-    letter-spacing: 2px;
+.categoryBar > h2 {
+  text-transform: uppercase;
+  font-size: 28px;
+  letter-spacing: 2px;
 }
 
 .headerHome {
-    background-image: url('../../../public/assets/home/mobile/image-header.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 100% 100%;
-    min-height: 475px;
-    padding-top: 95px;
+  background-image: url('../../../public/assets/home/mobile/image-header.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 100%;
+  min-height: 475px;
+  padding-top: 95px;
 }
 
 .headerHome :is(span, h2, a) {
-    text-transform: uppercase;
-    margin-top: 20px;
+  text-transform: uppercase;
+  margin-top: 20px;
 }
 
 .headerHome span {
-    letter-spacing: 10px;
-    opacity: .4;
-    font-size: 14px;
+  letter-spacing: 10px;
+  opacity: 0.4;
+  font-size: 14px;
 }
 
 .headerHome h2 {
-    font-size: 35px;
-    line-height: 40px;
+  font-size: 35px;
+  line-height: 40px;
 }
 
 .headerHome p {
-    margin-top: 50px;
-    opacity: .7;
-    font-size: 15px;
-    line-height: 25px;
+  margin-top: 50px;
+  opacity: 0.7;
+  font-size: 15px;
+  line-height: 25px;
 }
 
 .headerHome a {
-    display: inline-block;
-    padding: 14px;
+  display: inline-block;
+  padding: 14px;
 }

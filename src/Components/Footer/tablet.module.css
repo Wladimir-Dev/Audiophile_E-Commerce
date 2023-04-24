@@ -1,31 +1,30 @@
-@media only screen and (min-width:768px) {
-  .footer{
+@media only screen and (min-width: 768px) {
+  .footer {
     padding: 50px;
   }
-  .footer> p{
+  .footer > p {
     text-align: start;
     padding-left: 0px;
   }
-    .header{
-        align-items: start;
-    }
-  
-    .header ul{
+  .header {
+    align-items: start;
+  }
+
+  .header ul {
     flex-direction: row;
     justify-content: start;
     column-gap: 25px;
-   } 
-   .footerEnd{
+  }
+  .footerEnd {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
-    
-   }
-   .footerEnd >span{
+  }
+  .footerEnd > span {
     text-align: start;
-   }
-   .footerEnd >div{
+  }
+  .footerEnd > div {
     margin-top: 0;
-   }
+  }
 }

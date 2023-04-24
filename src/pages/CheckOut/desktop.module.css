@@ -1,21 +1,16 @@
-@media only screen and (min-width:1024px) {
+@media only screen and (min-width: 1024px) {
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    column-gap: 20px;
+  }
 
-    .form {
-        display: flex;
-        justify-content: center;
-        align-items: start;
-        column-gap: 20px;
+  .form > :nth-child(1) {
+    width: 70%;
+  }
 
-    }
-
-    .form>:nth-child(1) {
-        width: 70%;
-       
-    }
-
-    .form>:nth-child(2) {
-        flex-grow: 1;
-    }
-
-
+  .form > :nth-child(2) {
+    flex-grow: 1;
+  }
 }

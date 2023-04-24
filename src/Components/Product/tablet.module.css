@@ -1,14 +1,12 @@
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
+  .product {
+    margin-top: 40px;
+  }
 
-    .product {
-        margin-top: 40px;
-    }
-
-    .textDetail {
-        text-align: start;
-    }
-    .textBold{
-        font-size: 40px;
-    }
-   
+  .textDetail {
+    text-align: start;
+  }
+  .textBold {
+    font-size: 40px;
+  }
 }

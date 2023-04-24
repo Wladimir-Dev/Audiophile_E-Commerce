@@ -1,162 +1,153 @@
 .main {
-    background-color: var(--clr-light-gray);
-    padding: 40px 0px;
-   
+  background-color: var(--clr-light-gray);
+  padding: 40px 0px;
 }
 
 .checkout {
-    width: 85%;
-    margin: 0px auto;
-    display: flex;
-    flex-direction: column;
-
-
+  width: 85%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .checkout h2 {
-    text-transform: uppercase;
-    font-size: 25px;
-    margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
-.form>:nth-child(1) {
-   
-    background-color: white;
-    border-radius: 8px;
+.form > :nth-child(1) {
+  background-color: white;
+  border-radius: 8px;
 }
 .form__item {
-    margin: 0px 0px 40px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-  
-    padding: 30px 20px 35px;
+  margin: 0px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  padding: 30px 20px 35px;
 }
 
 .form legend {
-    color: var(--clr-orange);
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    margin-bottom: 15px;
+  color: var(--clr-orange);
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
 }
 
 .labelInput {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 800;
-    position: relative;
-    margin-bottom: 8px;
-    padding-left: 12px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  position: relative;
+  margin-bottom: 8px;
+  padding-left: 12px;
 }
 
 .labelInput::before {
-    content: "*";
-    color: red;
-    font-size: 18px;
-    top: -2px;
-    left: 0px;
-    position: absolute;
+  content: '*';
+  color: red;
+  font-size: 18px;
+  top: -2px;
+  left: 0px;
+  position: absolute;
 }
 
 .form input {
-    border-radius: 8px;
-    border-style: none;
-    border: 1px solid #f2f2f2;
-    padding: 18px;
-    font-size: 16px;
+  border-radius: 8px;
+  border-style: none;
+  border: 1px solid #f2f2f2;
+  padding: 18px;
+  font-size: 16px;
 }
-
-
 
 .body {
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
-.body>div {
-    margin: 10px 0px;
-    display: flex;
-    justify-content: space-between;
-    color: #8c8c8c;
-    font-weight: 600;
-
+.body > div {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  color: #8c8c8c;
+  font-weight: 600;
 }
-.body>div>div{
-    column-gap: 5px;
+.body > div > div {
+  column-gap: 5px;
 }
-.body>button{
-    width: 100%;
+.body > button {
+  width: 100%;
 }
-.body>div span:nth-child(1) {
-    opacity: .7;
+.body > div span:nth-child(1) {
+  opacity: 0.7;
 }
 
 .body__itemscard {
-    flex-direction: column;
-    row-gap: 5px;
+  flex-direction: column;
+  row-gap: 5px;
 }
 
 .body__itemscard button {
-    display: none;
+  display: none;
 }
 
 .body__itemscard span {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
-.body__itemscard>div div:nth-child(3) {
-    background-color: transparent;
-    position: relative;
-
+.body__itemscard > div div:nth-child(3) {
+  background-color: transparent;
+  position: relative;
 }
 
-.body__itemscard>div div:nth-child(3)::before {
-    content: "X";
-    position: absolute;
-    left: 10px;
-    font-size: 12px;
-    top: 12px;
-    font-weight: 800;
+.body__itemscard > div div:nth-child(3)::before {
+  content: 'X';
+  position: absolute;
+  left: 10px;
+  font-size: 12px;
+  top: 12px;
+  font-weight: 800;
 }
 
-.body>button {
-    align-self: center;
+.body > button {
+  align-self: center;
 }
 
-.body>button:disabled {
-    opacity: .5;
+.body > button:disabled {
+  opacity: 0.5;
 }
 
 small {
-    display: none;
+  display: none;
 }
 
-.form__item>input:invalid~small {
-    display: inline;
+.form__item > input:invalid ~ small {
+  display: inline;
 }
 
-input:valid+label {
-    display: none;
+input:valid + label {
+  display: none;
 }
 
 .error {
-    color: red;
-    display: inline;
-    text-transform: capitalize;
+  color: red;
+  display: inline;
+  text-transform: capitalize;
 }
 
 fieldset {
-    border-style: none;
-    margin-bottom: 20px;
+  border-style: none;
+  margin-bottom: 20px;
 }
 
 .noVisible {
-    display: none;
+  display: none;
 }

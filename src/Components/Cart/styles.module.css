@@ -1,75 +1,70 @@
 .card {
-    background-color: white;
-    width: 280px;
-    height: auto;
-    border-radius: 8px;
-    padding: 22px;
-    padding-top: 23px;
-    position: absolute;
-    top: 144px;
-   
-
+  background-color: white;
+  width: 280px;
+  height: auto;
+  border-radius: 8px;
+  padding: 22px;
+  padding-top: 23px;
+  position: absolute;
+  top: 144px;
 }
 .closeButton {
-    position: absolute;
-    top: -11px;
-    left: 263px;
-    border-style: none;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    text-align: center;
-    padding-top: 1.5px;
-    z-index: 1;
-    cursor: pointer;
+  position: absolute;
+  top: -11px;
+  left: 263px;
+  border-style: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 1.5px;
+  z-index: 1;
+  cursor: pointer;
 }
-.card h3{
-    text-align: center;
+.card h3 {
+  text-align: center;
 }
 .card__header {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
-.card__header>h5 {
-font-size: 19px;
+.card__header > h5 {
+  font-size: 19px;
 }
-.card__header>button {
-    border-style: none;
-    background-color: transparent;
-    border-bottom: 1px solid black;
-    width: 90px;
-    text-align: center;
-    font-size: 16px;
-    padding: 0px 1px;
-    opacity: 0.8;
-    cursor: pointer;
+.card__header > button {
+  border-style: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  width: 90px;
+  text-align: center;
+  font-size: 16px;
+  padding: 0px 1px;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .card__body {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
 }
 
 .card__footer {
-
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 22px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
 }
-.card__footer>button{
-    width: 100%;
+.card__footer > button {
+  width: 100%;
 }
 .footer__total {
-    display: flex;
-    justify-content: space-between;
-   
+  display: flex;
+  justify-content: space-between;
 }
 
-.footer__total span:nth-child(2){
-    font-weight: 600;
+.footer__total span:nth-child(2) {
+  font-weight: 600;
 }
