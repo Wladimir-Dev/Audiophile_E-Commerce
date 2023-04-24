@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useCart } from '../hooks/useCart'
-import { CheckIcon } from '../icons'
+import { CheckIcon } from '../Icons'
 import { ProductCart } from '../ProductCart'
 
 
